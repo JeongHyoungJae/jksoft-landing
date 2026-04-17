@@ -1,18 +1,23 @@
 User-agent: *
 Allow: /
+Disallow: /ai_strategy_proposal.html
 
 # Specifically allow AI search crawlers
 User-agent: GPTBot
 Allow: /
+Disallow: /ai_strategy_proposal.html
 
 User-agent: Claude-Web
 Allow: /
+Disallow: /ai_strategy_proposal.html
 
 User-agent: CCBot
 Allow: /
+Disallow: /ai_strategy_proposal.html
 
 User-agent: PerplexityBot
 Allow: /
+Disallow: /ai_strategy_proposal.html
 
 # Reference to the AI summary file
 Sitemap: https://jeonghyoungjae.github.io/jksoft-landing/llms.txt

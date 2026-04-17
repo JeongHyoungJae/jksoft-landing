@@ -115,13 +115,14 @@
     .nav-logo .logo-icon {
       width: 36px;
       height: 36px;
-      background: var(--gradient-brand);
       border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 18px;
-      color: white;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .nav-logo .logo-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
     .nav-links {
       display: flex;
@@ -714,7 +715,7 @@
   <!-- Navigation -->
   <nav id="navbar">
     <div class="nav-logo">
-      <div class="logo-icon">♥</div>
+      <div class="logo-icon"><img src="logo.png" alt="JkSoft"></div>
       <span>JkSoft</span>
     </div>
     <ul class="nav-links">
@@ -969,7 +970,7 @@
     <div class="footer-content">
       <div class="footer-brand">
         <div class="nav-logo">
-          <div class="logo-icon">♥</div>
+          <div class="logo-icon"><img src="logo.png" alt="JkSoft"></div>
           <span>JkSoft</span>
         </div>
         <p>기술로 연결하고, 플랫폼으로 성장합니다. 멀티테넌트 SaaS 기반의 차세대 디지털 솔루션.</p>
@@ -991,7 +992,8 @@
       <div class="footer-links">
         <h4>연락처</h4>
         <ul>
-          <li><a href="mailto:contact@jksoft.dev">contact@jksoft.dev</a></li>
+          <li><a href="mailto:jksoft.jeong@gmail.com">jksoft.jeong@gmail.com</a></li>
+          <li><a href="tel:010-2998-0603">📞 010-2998-0603</a></li>
         </ul>
       </div>
     </div>

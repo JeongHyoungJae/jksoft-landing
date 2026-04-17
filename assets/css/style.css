@@ -1149,3 +1149,108 @@ footer {
   body { background: white; color: #333; }
   section { padding: 40px 20px; }
 }
+
+/* ===== AIO Demo Component ===== */
+.aio-demo-container {
+  margin-top: 48px;
+  text-align: left;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.aio-details {
+  background: var(--bg-glass);
+  border: 1px solid var(--border-glass);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(20px);
+}
+
+.aio-details[open] {
+  border-color: rgba(99, 102, 241, 0.4);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.aio-summary {
+  padding: 24px;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 700;
+  color: var(--text-primary);
+  transition: background 0.3s;
+  user-select: none;
+}
+
+.aio-summary:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.aio-summary::-webkit-details-marker {
+  display: none;
+}
+
+.aio-summary-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.aio-summary .status-dot {
+  width: 8px;
+  height: 8px;
+  background: #34d399;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #34d399;
+}
+
+.aio-summary .toggle-icon {
+  font-size: 14px;
+  color: var(--text-muted);
+  transition: transform 0.3s ease;
+}
+
+.aio-details[open] .toggle-icon {
+  transform: rotate(180deg);
+}
+
+.aio-content-wrapper {
+  padding: 0 24px 24px;
+  animation: fadeInUp 0.4s ease-out;
+}
+
+.aio-code-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-top: 1px solid var(--border-glass);
+  margin-bottom: 8px;
+}
+
+.aio-code-block {
+  background: #08080c;
+  padding: 24px;
+  border-radius: 12px;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 13px;
+  line-height: 1.7;
+  color: #a1a1aa;
+  overflow-x: auto;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.aio-code-block .hl-h { color: var(--indigo-light); font-weight: 700; }
+.aio-code-block .hl-b { color: var(--rose-light); }
+.aio-code-block .hl-list { color: var(--text-secondary); }
+

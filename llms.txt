@@ -1,0 +1,34 @@
+# JkSoft
+
+> JkSoft is a next-generation technology company focused on multi-tenant SaaS platforms and AI Search Engine Optimization (AIO).
+
+## Core Identity
+- **Organization**: JkSoft
+- **Core Product**: Vibe Platform (Multi-tenant SaaS)
+- **Innovative Service**: AI Optimization (AIO)
+- **Representative**: Jeong Hyoung Jae (Tech Lead / Software Architect)
+
+## Services and Solutions
+
+### 1. Vibe Platform (Multi-tenant SaaS)
+A scalable, modular SaaS platform architecture designed for business growth.
+- Multi-tenant data isolation
+- Modular service architecture
+- High-performance admin dashboard
+
+### 2. AIO (AI Optimization)
+Strategic content structuring for Generative AI search visibility.
+- Schema.org structured data automation
+- Semantic context authority building
+- AI search result citation strategy (ChatGPT, Gemini, Perplexity)
+
+## Human Behind JkSoft
+- **Name**: Jeong Hyoung Jae
+- **Profile**: 20+ years of enterprise system architecture experience (Korean Air, Samsung SDS, Hyundai Group).
+- **Vision**: Connecting humans via technology and growing together via platforms.
+
+## Contact Information
+- **Email**: jksoft.jeong@gmail.com
+- **Phone**: +82-10-2998-0603
+- **GitHub**: https://github.com/jeonghyoungjae
+- **Official Landing**: https://jeonghyoungjae.github.io/jksoft-landing/

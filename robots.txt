@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# Specifically allow AI search crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# Reference to the AI summary file
+Sitemap: https://jeonghyoungjae.github.io/jksoft-landing/llms.txt

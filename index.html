@@ -7,17 +7,20 @@
   <meta name="description" content="JkSoft는 AI 최적화 기반의 멀티테넌트 SaaS 플랫폼 'Vibe'를 통해 디지털 비즈니스의 새로운 기준을 제시합니다.">
   <meta property="og:title" content="JkSoft — Vibe Platform">
   <meta property="og:description" content="AI 최적화 + 멀티테넌트 SaaS 플랫폼. 팬덤 관리부터 기업 홈페이지까지.">
-  <meta property="og:type" content="website">
+    <meta property="og:type" content="website">
+  <meta property="og:image" content="https://jeonghyoungjae.github.io/jksoft-landing/assets/images/og-image.png">
+  <link rel="alternate" hreflang="ko" href="https://jeonghyoungjae.github.io/jksoft-landing/" />
+  <link rel="alternate" hreflang="ja" href="https://jeonghyoungjae.github.io/jksoft-landing/ja/" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css?v=1.0.1">
 </head>
 <body>
 
   <!-- Navigation -->
   <nav id="navbar">
-    <a href="index.html" class="nav-logo">
+    <a href="index.html" class="nav-logo" aria-label="JkSoft 메인 화면으로 이동">
       <div class="logo-icon"><img src="assets/images/logo.png" alt="JkSoft"></div>
       <span>JkSoft</span>
     </a>
@@ -30,10 +33,10 @@
       <li><a href="profile.html">Profile</a></li>
     </ul>
     <div style="display: flex; gap: 20px; align-items: center;">
-      <div class="lang-switcher" style="display: flex; gap: 8px; font-size: 14px; font-weight: 600;">
-        <a href="index.html" style="color: var(--text-primary);">KO</a>
+      <div class="lang-switcher" aria-label="Language / 言語" style="display: flex; gap: 8px; font-size: 14px; font-weight: 600;">
+        <a href="index.html" style="color: var(--text-primary);" aria-label="Korean">KO</a>
         <span style="color: var(--border-glass);">|</span>
-        <a href="ja/index.html" style="color: var(--text-secondary); transition: color 0.3s;" onmouseover="this.style.color='var(--text-primary)'" onmouseout="this.style.color='var(--text-secondary)'">JP</a>
+        <a href="ja/index.html" style="color: var(--text-secondary); transition: color 0.3s;" onmouseover="this.style.color='var(--text-primary)'" onmouseout="this.style.color='var(--text-secondary)'" aria-label="日本語モード">JP</a>
       </div>
       <a href="#proposal"><button class="nav-cta">문의하기</button></a>
     </div>
@@ -280,7 +283,7 @@
   <footer>
     <div class="footer-content">
       <div class="footer-brand">
-        <a href="index.html" class="nav-logo">
+        <a href="index.html" class="nav-logo" aria-label="JkSoft Home">
       <div class="logo-icon"><img src="assets/images/logo.png" alt="JkSoft"></div>
       <span>JkSoft</span>
     </a>

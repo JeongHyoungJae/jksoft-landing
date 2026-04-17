@@ -7,17 +7,20 @@
   <meta name="description" content="20年以上のエンタープライズシステム要件定義・設計の経験とフルスタック技術。大韓航空、Samsung SDS、現代グループなど大型プロジェクトを遂行。">
   <meta property="og:title" content="Jeong Hyoung Jae — JkSoft 代表">
   <meta property="og:description" content="20年以上のエンタープライズシステム要件定義・設計の経験とフルスタック技術で、複雑なビジネス要件を技術で実現するソフトウェアエンジニア。">
-  <meta property="og:type" content="profile">
+    <meta property="og:type" content="website">
+  <meta property="og:image" content="https://jeonghyoungjae.github.io/jksoft-landing/assets/images/og-image.png">
+  <link rel="alternate" hreflang="ko" href="https://jeonghyoungjae.github.io/jksoft-landing/" />
+  <link rel="alternate" hreflang="ja" href="https://jeonghyoungjae.github.io/jksoft-landing/ja/" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/style.css?v=1.0.1">
 </head>
 <body>
 
   <!-- Navigation -->
   <nav id="navbar">
-    <a href="index.html" class="nav-logo">
+    <a href="index.html" class="nav-logo" aria-label="JkSoft Home">
       <div class="logo-icon"><img src="../assets/images/logo.png" alt="JkSoft"></div>
       <span>JkSoft</span>
     </a>
@@ -29,10 +32,10 @@
       <li><a href="profile.html" style="color: var(--text-primary);">Profile</a></li>
     </ul>
     <div style="display: flex; gap: 20px; align-items: center;">
-      <div class="lang-switcher" style="display: flex; gap: 8px; font-size: 14px; font-weight: 600;">
-        <a href="../profile.html" style="color: var(--text-secondary); transition: color 0.3s;" onmouseover="this.style.color='var(--text-primary)'" onmouseout="this.style.color='var(--text-secondary)'">KO</a>
+      <div class="lang-switcher" aria-label="Language / 言語" style="display: flex; gap: 8px; font-size: 14px; font-weight: 600;">
+        <a href="../profile.html" style="color: var(--text-secondary); transition: color 0.3s;" onmouseover="this.style.color='var(--text-primary)'" onmouseout="this.style.color='var(--text-secondary)'" aria-label="Korean">KO</a>
         <span style="color: var(--border-glass);">|</span>
-        <a href="profile.html" style="color: var(--text-primary);">JP</a>
+        <a href="profile.html" style="color: var(--text-primary);" aria-label="Japanese">JP</a>
       </div>
       <a href="mailto:jksoft.jeong@gmail.com"><button class="nav-cta">お問い合わせ</button></a>
     </div>
@@ -567,7 +570,7 @@
   <footer>
     <div class="footer-content">
       <div class="footer-brand">
-        <a href="index.html" class="nav-logo">
+        <a href="index.html" class="nav-logo" aria-label="JkSoft Home">
           <div class="logo-icon"><img src="../assets/images/logo.png" alt="JkSoft"></div>
           <span>JkSoft</span>
         </a>

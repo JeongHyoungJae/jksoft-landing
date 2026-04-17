@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JkSoft — Vibe Platform | 차세대 멀티테넌트 SaaS</title>
+  <meta name="description" content="JkSoft는 AI 최적화 기반의 멀티테넌트 SaaS 플랫폼 'Vibe'를 통해 디지털 비즈니스의 새로운 기준을 제시합니다.">
+  <meta property="og:title" content="JkSoft — Vibe Platform">
+  <meta property="og:description" content="AI 최적화 + 멀티테넌트 SaaS 플랫폼. 팬덤 관리부터 기업 홈페이지까지.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ===== CSS Reset & Variables ===== */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --indigo: #6366f1;
+      --indigo-light: #818cf8;
+      --rose: #fb7185;
+      --rose-light: #fda4af;
+      --bg-dark: #0a0a0f;
+      --bg-card: rgba(255, 255, 255, 0.04);
+      --bg-glass: rgba(255, 255, 255, 0.06);
+      --border-glass: rgba(255, 255, 255, 0.08);
+      --text-primary: #f1f5f9;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+      --gradient-brand: linear-gradient(135deg, #6366f1, #a855f7, #fb7185);
+      --gradient-subtle: linear-gradient(135deg, rgba(99,102,241,0.15), rgba(168,85,247,0.08));
+      --font-sans: 'Inter', 'Noto Sans KR', -apple-system, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg-dark);
+      color: var(--text-primary);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    /* ===== Animations ===== */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-12px); }
+    }
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 0 20px rgba(99,102,241,0.3); }
+      50% { box-shadow: 0 0 40px rgba(99,102,241,0.5), 0 0 60px rgba(168,85,247,0.2); }
+    }
+    @keyframes gradient-shift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    @keyframes slideInLeft {
+      from { opacity: 0; transform: translateX(-60px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes slideInRight {
+      from { opacity: 0; transform: translateX(60px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+    .animate-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== Navigation ===== */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 16px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      background: rgba(10, 10, 15, 0.7);
+      border-bottom: 1px solid var(--border-glass);
+      transition: all 0.3s ease;
+    }
+    nav.scrolled {
+      padding: 10px 40px;
+      background: rgba(10, 10, 15, 0.92);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 22px;
+      letter-spacing: -0.5px;
+    }
+    .nav-logo .logo-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--gradient-brand);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      color: white;
+    }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      transition: color 0.3s;
+      position: relative;
+    }
+    .nav-links a:hover { color: var(--text-primary); }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gradient-brand);
+      transition: width 0.3s;
+    }
+    .nav-links a:hover::after { width: 100%; }
+
+    .nav-cta {
+      padding: 10px 24px;
+      background: var(--gradient-brand);
+      background-size: 200% 200%;
+      border: none;
+      border-radius: 50px;
+      color: white;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .nav-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+    }
+
+    /* ===== Hero Section ===== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 40px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bg-gradient {
+      position: absolute;
+      top: -200px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 900px;
+      height: 900px;
+      background: radial-gradient(circle, rgba(99,102,241,0.12) 0%, rgba(168,85,247,0.06) 40%, transparent 70%);
+      pointer-events: none;
+      animation: float 8s ease-in-out infinite;
+    }
+    .hero-bg-orb1 {
+      position: absolute;
+      top: 20%;
+      left: 10%;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(251,113,133,0.08), transparent 70%);
+      border-radius: 50%;
+      animation: float 6s ease-in-out infinite 1s;
+    }
+    .hero-bg-orb2 {
+      position: absolute;
+      bottom: 15%;
+      right: 8%;
+      width: 250px;
+      height: 250px;
+      background: radial-gradient(circle, rgba(99,102,241,0.1), transparent 70%);
+      border-radius: 50%;
+      animation: float 7s ease-in-out infinite 2s;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 20px;
+      background: var(--bg-glass);
+      border: 1px solid var(--border-glass);
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      margin-bottom: 32px;
+      backdrop-filter: blur(10px);
+    }
+    .hero-badge .dot {
+      width: 6px;
+      height: 6px;
+      background: #34d399;
+      border-radius: 50%;
+      animation: pulse-glow 2s infinite;
+      box-shadow: 0 0 6px #34d399;
+    }
+
+    .hero h1 {
+      font-size: clamp(40px, 6vw, 72px);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -2px;
+      margin-bottom: 24px;
+    }
+    .hero h1 .gradient-text {
+      background: var(--gradient-brand);
+      background-size: 200% 200%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: gradient-shift 4s ease infinite;
+    }
+    .hero p {
+      font-size: 18px;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto 48px;
+      line-height: 1.8;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 16px 36px;
+      background: var(--gradient-brand);
+      background-size: 200% 200%;
+      animation: gradient-shift 4s ease infinite;
+      border: none;
+      border-radius: 14px;
+      color: white;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px rgba(99, 102, 241, 0.4);
+    }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 16px 36px;
+      background: var(--bg-glass);
+      border: 1px solid var(--border-glass);
+      backdrop-filter: blur(10px);
+      border-radius: 14px;
+      color: var(--text-primary);
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.2);
+      transform: translateY(-3px);
+    }
+
+    /* ===== Section Common ===== */
+    section {
+      padding: 120px 40px;
+      position: relative;
+    }
+    .section-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--indigo-light);
+      margin-bottom: 16px;
+    }
+    .section-label::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--gradient-brand);
+    }
+    .section-title {
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+    .section-desc {
+      font-size: 17px;
+      color: var(--text-secondary);
+      max-width: 600px;
+      line-height: 1.8;
+      margin-bottom: 64px;
+    }
+
+    /* ===== About Section ===== */
+    #about {
+      background: linear-gradient(180deg, var(--bg-dark) 0%, rgba(99,102,241,0.03) 50%, var(--bg-dark) 100%);
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .about-text h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--rose-light);
+    }
+    .about-text p {
+      color: var(--text-secondary);
+      line-height: 1.85;
+      margin-bottom: 24px;
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .stat-card {
+      padding: 28px;
+      background: var(--bg-glass);
+      border: 1px solid var(--border-glass);
+      border-radius: 16px;
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s, border-color 0.3s;
+    }
+    .stat-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(99,102,241,0.3);
+    }
+    .stat-number {
+      font-size: 36px;
+      font-weight: 800;
+      background: var(--gradient-brand);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 4px;
+    }
+    .stat-label {
+      font-size: 13px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* ===== Vibe Section ===== */
+    #vibe { overflow: hidden; }
+    .vibe-header { text-align: center; }
+    .vibe-header .section-desc { margin-left: auto; margin-right: auto; }
+
+    .feature-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .feature-card {
+      padding: 36px 28px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-glass);
+      border-radius: 20px;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--gradient-brand);
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+    .feature-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(99,102,241,0.2);
+      background: rgba(255,255,255,0.06);
+    }
+    .feature-card:hover::before { opacity: 1; }
+
+    .feature-icon {
+      width: 52px;
+      height: 52px;
+      background: var(--gradient-subtle);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    .feature-card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .feature-card p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.75;
+    }
+
+    /* ===== Tech Stack Section ===== */
+    #tech {
+      background: linear-gradient(180deg, var(--bg-dark) 0%, rgba(168,85,247,0.03) 50%, var(--bg-dark) 100%);
+    }
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .tech-card {
+      padding: 32px 24px;
+      background: var(--bg-glass);
+      border: 1px solid var(--border-glass);
+      border-radius: 16px;
+      text-align: center;
+      transition: all 0.4s;
+      backdrop-filter: blur(10px);
+    }
+    .tech-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(168,85,247,0.3);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+    }
+    .tech-card .tech-emoji {
+      font-size: 40px;
+      margin-bottom: 16px;
+      display: block;
+    }
+    .tech-card h4 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .tech-card p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ===== AIO Section ===== */
+    #aio { overflow: hidden; }
+    .aio-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .aio-visual {
+      background: var(--bg-glass);
+      border: 1px solid var(--border-glass);
+      border-radius: 20px;
+      padding: 40px;
+      position: relative;
+      backdrop-filter: blur(10px);
+    }
+    .aio-visual::after {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border-radius: 20px;
+      background: var(--gradient-brand);
+      opacity: 0.1;
+      z-index: -1;
+    }
+    .aio-flow-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 24px;
+      padding: 16px;
+      background: rgba(255,255,255,0.03);
+      border-radius: 12px;
+      border: 1px solid transparent;
+      transition: all 0.3s;
+    }
+    .aio-flow-step:hover {
+      border-color: var(--border-glass);
+      background: rgba(255,255,255,0.06);
+    }
+    .aio-flow-step:last-child { margin-bottom: 0; }
+    .aio-step-num {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      background: var(--gradient-brand);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 700;
+      color: white;
+    }
+    .aio-step-text h4 {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .aio-step-text p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .aio-text-area h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--rose-light);
+    }
+    .aio-text-area p {
+      color: var(--text-secondary);
+      line-height: 1.85;
+      margin-bottom: 20px;
+    }
+    .aio-text-area ul {
+      list-style: none;
+      padding: 0;
+    }
+    .aio-text-area li {
+      position: relative;
+      padding-left: 24px;
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+      font-size: 15px;
+    }
+    .aio-text-area li::before {
+      content: '✦';
+      position: absolute;
+      left: 0;
+      color: var(--indigo-light);
+    }
+
+    /* ===== Proposal CTA Section ===== */
+    #proposal {
+      text-align: center;
+      background: linear-gradient(180deg, var(--bg-dark) 0%, rgba(99,102,241,0.05) 50%, var(--bg-dark) 100%);
+    }
+    .proposal-box {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 60px;
+      background: var(--bg-glass);
+      border: 1px solid var(--border-glass);
+      border-radius: 24px;
+      backdrop-filter: blur(20px);
+      position: relative;
+      overflow: hidden;
+    }
+    .proposal-box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--gradient-brand);
+    }
+    .proposal-box h2 {
+      font-size: 28px;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+    .proposal-box p {
+      color: var(--text-secondary);
+      margin-bottom: 36px;
+      line-height: 1.7;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      padding: 60px 40px 40px;
+      border-top: 1px solid var(--border-glass);
+      background: rgba(0,0,0,0.3);
+    }
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+    .footer-brand .nav-logo { margin-bottom: 12px; }
+    .footer-brand p {
+      font-size: 14px;
+      color: var(--text-muted);
+      max-width: 300px;
+      line-height: 1.6;
+    }
+    .footer-links h4 {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: var(--text-secondary);
+    }
+    .footer-links ul {
+      list-style: none;
+    }
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+    .footer-links a {
+      font-size: 13px;
+      color: var(--text-muted);
+      transition: color 0.3s;
+    }
+    .footer-links a:hover { color: var(--text-primary); }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 40px auto 0;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-glass);
+      font-size: 13px;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 1024px) {
+      .feature-cards { grid-template-columns: repeat(2, 1fr); }
+      .tech-grid { grid-template-columns: repeat(2, 1fr); }
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .aio-content { grid-template-columns: 1fr; gap: 40px; }
+    }
+    @media (max-width: 768px) {
+      nav { padding: 12px 20px; }
+      .nav-links { display: none; }
+      section { padding: 80px 20px; }
+      .hero { padding: 100px 20px 60px; }
+      .hero h1 { letter-spacing: -1px; }
+      .feature-cards { grid-template-columns: 1fr; }
+      .tech-grid { grid-template-columns: repeat(2, 1fr); }
+      .about-stats { grid-template-columns: repeat(2, 1fr); }
+      .proposal-box { padding: 40px 24px; }
+      .footer-content { flex-direction: column; }
+    }
+
+    /* ===== Print Styles ===== */
+    @media print {
+      nav, .hero-bg-gradient, .hero-bg-orb1, .hero-bg-orb2 { display: none; }
+      body { background: white; color: #333; }
+      section { padding: 40px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav id="navbar">
+    <div class="nav-logo">
+      <div class="logo-icon">♥</div>
+      <span>JkSoft</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#vibe">Vibe</a></li>
+      <li><a href="#tech">Tech Stack</a></li>
+      <li><a href="#aio">AI Optimization</a></li>
+      <li><a href="#proposal">제안서</a></li>
+    </ul>
+    <a href="#proposal"><button class="nav-cta">문의하기</button></a>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-bg-gradient"></div>
+    <div class="hero-bg-orb1"></div>
+    <div class="hero-bg-orb2"></div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        SaaS Platform — Now Live
+      </div>
+      <h1>
+        디지털 비즈니스의<br>
+        <span class="gradient-text">새로운 기준</span>을 만듭니다
+      </h1>
+      <p>
+        JkSoft는 AI 최적화(AIO) 기반의 멀티테넌트 SaaS 플랫폼 <strong>Vibe</strong>를 통해,<br>
+        팬덤 관리부터 기업 홈페이지까지 — 하나의 인프라로 모든 것을 실현합니다.
+      </p>
+      <div class="hero-buttons">
+        <a href="#vibe"><button class="btn-primary">Vibe 알아보기 →</button></a>
+        <a href="ai_strategy_proposal.html"><button class="btn-secondary">📄 AI 전략 제안서 보기</button></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About JkSoft Section -->
+  <section id="about">
+    <div class="section-container">
+      <div class="about-grid">
+        <div class="about-text animate-on-scroll">
+          <span class="section-label">About JkSoft</span>
+          <h2 class="section-title">기술로 연결하고,<br>플랫폼으로 성장합니다</h2>
+          <h3>"Stay Connected"</h3>
+          <p>
+            JkSoft는 풀스택 SaaS 아키텍처 전문 소프트웨어 엔지니어링 팀입니다.
+            단순한 웹사이트 제작을 넘어, <strong>멀티테넌트 기반의 지능형 플랫폼</strong>을 설계하고 구축합니다.
+          </p>
+          <p>
+            하나의 공유 인프라 위에서 다수의 고객사를 동시에 운영하면서도
+            데이터 격리와 브랜드 개인화를 완벽하게 보장하는 — 이것이 JkSoft가 추구하는 기술의 방향입니다.
+          </p>
+        </div>
+        <div class="about-stats animate-on-scroll">
+          <div class="stat-card">
+            <div class="stat-number">SaaS</div>
+            <div class="stat-label">멀티테넌트 아키텍처</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">AIO</div>
+            <div class="stat-label">AI 최적화 기술</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">4</div>
+            <div class="stat-label">다국어 지원 (한/영/중/일)</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">Full</div>
+            <div class="stat-label">프론트 + 백엔드 풀스택</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vibe Platform Section -->
+  <section id="vibe">
+    <div class="section-container">
+      <div class="vibe-header animate-on-scroll">
+        <span class="section-label">Vibe Platform</span>
+        <h2 class="section-title">Vibe — 감성과 기술의 연결</h2>
+        <p class="section-desc">
+          Vibe는 아티스트와 팬을 연결하는 통합 팬덤 관리 플랫폼입니다.
+          멀티테넌트 SaaS 구조로 새로운 사이트를 즉시 개설하고, AI로 콘텐츠를 최적화합니다.
+        </p>
+      </div>
+      <div class="feature-cards">
+        <div class="feature-card animate-on-scroll">
+          <div class="feature-icon">🏢</div>
+          <h3>멀티테넌트 관리</h3>
+          <p>하나의 어드민 콘솔에서 다수의 팬 사이트를 완전 독립적으로 운영합니다. 데이터 격리, 권한 분리, 브랜드 개인화를 기본 제공합니다.</p>
+        </div>
+        <div class="feature-card animate-on-scroll">
+          <div class="feature-icon">🤖</div>
+          <h3>AI 콘텐츠 자동 최적화</h3>
+          <p>관리자가 글을 작성하면 AI(Gemini)가 자동으로 분석하여 SEO 태그, 핵심 요약, Schema.org 메타데이터를 생성합니다.</p>
+        </div>
+        <div class="feature-card animate-on-scroll">
+          <div class="feature-icon">🌐</div>
+          <h3>다국어 & 글로벌 대응</h3>
+          <p>한국어, 영어, 일본어, 중국어 — 4개 국어를 네이티브하게 지원합니다. URL 기반 i18n으로 AI 크롤러와 검색 엔진에 최적화됩니다.</p>
+        </div>
+        <div class="feature-card animate-on-scroll">
+          <div class="feature-icon">📊</div>
+          <h3>통합 대시보드</h3>
+          <p>테넌트별 회원 현황, 게시물 통계, 문의 관리를 하나의 직관적인 대시보드에서 실시간으로 모니터링합니다.</p>
+        </div>
+        <div class="feature-card animate-on-scroll">
+          <div class="feature-icon">🎨</div>
+          <h3>화이트 라벨링</h3>
+          <p>각 테넌트마다 고유한 로고, 컬러, 사이트 이름을 적용할 수 있습니다. 관리자 화면에서도 선택된 테넌트의 브랜드가 실시간 반영됩니다.</p>
+        </div>
+        <div class="feature-card animate-on-scroll">
+          <div class="feature-icon">🔒</div>
+          <h3>기업급 보안</h3>
+          <p>JWT 기반 인증, 역할 기반 접근 제어(RBAC), 테넌트 간 완전한 데이터 격리로 기업급 보안 수준을 유지합니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Stack Section -->
+  <section id="tech">
+    <div class="section-container">
+      <div class="animate-on-scroll" style="text-align:center;">
+        <span class="section-label">Technology</span>
+        <h2 class="section-title">모던 기술 스택</h2>
+        <p class="section-desc" style="margin-left:auto;margin-right:auto;">
+          검증된 글로벌 표준 기술만을 사용합니다. TypeScript 기반의 통일된 생태계로 프론트엔드부터 백엔드까지 완벽한 타입 안전성을 보장합니다.
+        </p>
+      </div>
+      <div class="tech-grid">
+        <div class="tech-card animate-on-scroll">
+          <span class="tech-emoji">⚡</span>
+          <h4>Next.js</h4>
+          <p>SSR/SSG 기반의 초고속 프론트엔드. SEO와 AIO에 최적화된 페이지를 자동 생성합니다.</p>
+        </div>
+        <div class="tech-card animate-on-scroll">
+          <span class="tech-emoji">🏗️</span>
+          <h4>NestJS</h4>
+          <p>엔터프라이즈급 모듈러 백엔드. CQRS 패턴과 의존성 주입으로 확장 가능한 API를 제공합니다.</p>
+        </div>
+        <div class="tech-card animate-on-scroll">
+          <span class="tech-emoji">🔷</span>
+          <h4>TypeScript</h4>
+          <p>프론트/백엔드 전체를 관통하는 단일 언어. 컴파일 타임 오류 검출로 안정성을 극대화합니다.</p>
+        </div>
+        <div class="tech-card animate-on-scroll">
+          <span class="tech-emoji">🗃️</span>
+          <h4>Prisma</h4>
+          <p>직관적인 스키마 기반 ORM. 타입 안전한 데이터베이스 접근과 자동 마이그레이션을 지원합니다.</p>
+        </div>
+        <div class="tech-card animate-on-scroll">
+          <span class="tech-emoji">🧠</span>
+          <h4>Gemini AI</h4>
+          <p>Google의 차세대 AI 엔진. 콘텐츠 분석, 자동 분류, AIO 데이터 생성에 활용됩니다.</p>
+        </div>
+        <div class="tech-card animate-on-scroll">
+          <span class="tech-emoji">📦</span>
+          <h4>Monorepo</h4>
+          <p>프론트엔드, 백엔드, 어드민을 하나의 저장소에서 관리. 코드 공유와 일관성을 보장합니다.</p>
+        </div>
+        <div class="tech-card animate-on-scroll">
+          <span class="tech-emoji">🔄</span>
+          <h4>TanStack Query</h4>
+          <p>서버 상태 관리의 표준. 캐싱, 낙관적 업데이트, 실시간 데이터 동기화를 처리합니다.</p>
+        </div>
+        <div class="tech-card animate-on-scroll">
+          <span class="tech-emoji">☁️</span>
+          <h4>NHN Cloud</h4>
+          <p>국내 최적화 클라우드 인프라. 안정적인 서버 운영과 데이터 주권을 보장합니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AIO Section -->
+  <section id="aio">
+    <div class="section-container">
+      <div class="aio-content">
+        <div class="aio-text-area animate-on-scroll">
+          <span class="section-label">AI Optimization</span>
+          <h2 class="section-title">제로클릭 시대의<br>새로운 마케팅</h2>
+          <h3>AI가 당신의 브랜드를 추천합니다</h3>
+          <p>
+            ChatGPT, Gemini 등 생성형 AI가 검색의 중심이 되면서,
+            사용자는 웹사이트를 방문하지 않고도 원하는 답을 얻습니다.
+          </p>
+          <p>
+            JkSoft의 AIO(AI Optimization) 기술은 <strong>AI가 당신의 콘텐츠를 '가장 신뢰할 수 있는 출처'로 인용</strong>하도록 만듭니다.
+          </p>
+          <ul>
+            <li>Schema.org 기반 구조화 데이터 자동 생성</li>
+            <li>AI 인용 권위도(Context Authority) 분석</li>
+            <li>시맨틱 인덱싱으로 전문 지식 체계화</li>
+            <li>고관여 고객 전환율(CVR) 극대화</li>
+          </ul>
+        </div>
+        <div class="aio-visual animate-on-scroll">
+          <div class="aio-flow-step">
+            <div class="aio-step-num">1</div>
+            <div class="aio-step-text">
+              <h4>콘텐츠 작성</h4>
+              <p>관리자가 CMS에서 일반 텍스트로 게시물을 작성합니다.</p>
+            </div>
+          </div>
+          <div class="aio-flow-step">
+            <div class="aio-step-num">2</div>
+            <div class="aio-step-text">
+              <h4>AI 자동 분석</h4>
+              <p>Gemini AI가 본문을 즉시 해석하여 핵심 키워드와 카테고리를 추출합니다.</p>
+            </div>
+          </div>
+          <div class="aio-flow-step">
+            <div class="aio-step-num">3</div>
+            <div class="aio-step-text">
+              <h4>AIO 데이터 생성</h4>
+              <p>Schema.org 코드, SEO 태그, 핵심 요약을 자동 삽입합니다.</p>
+            </div>
+          </div>
+          <div class="aio-flow-step">
+            <div class="aio-step-num">4</div>
+            <div class="aio-step-text">
+              <h4>AI 검색 노출</h4>
+              <p>ChatGPT, Gemini 등이 해당 콘텐츠를 공식 출처로 인용합니다.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proposal CTA Section -->
+  <section id="proposal">
+    <div class="section-container">
+      <div class="proposal-box animate-on-scroll">
+        <h2>AI 전략 제안서</h2>
+        <p>
+          JkSoft의 AI 최적화 웹 서비스 구축 전략을 상세히 담은 제안서를 확인하세요.
+          제로클릭 시대에 대응하는 차세대 웹 전략의 모든 것을 제안합니다.
+        </p>
+        <a href="ai_strategy_proposal.html">
+          <button class="btn-primary">📄 제안서 전체 보기 →</button>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <div class="nav-logo">
+          <div class="logo-icon">♥</div>
+          <span>JkSoft</span>
+        </div>
+        <p>기술로 연결하고, 플랫폼으로 성장합니다. 멀티테넌트 SaaS 기반의 차세대 디지털 솔루션.</p>
+      </div>
+      <div class="footer-links">
+        <h4>서비스</h4>
+        <ul>
+          <li><a href="#vibe">Vibe Platform</a></li>
+          <li><a href="#aio">AI Optimization</a></li>
+          <li><a href="#tech">Tech Stack</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>자료</h4>
+        <ul>
+          <li><a href="ai_strategy_proposal.html">AI 전략 제안서</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>연락처</h4>
+        <ul>
+          <li><a href="mailto:contact@jksoft.dev">contact@jksoft.dev</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 JkSoft. All rights reserved. Built with ♥ and TypeScript.
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Scroll animation observer
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          // Stagger animation for sibling cards
+          const siblings = entry.target.parentElement.querySelectorAll('.animate-on-scroll');
+          const siblingIndex = Array.from(siblings).indexOf(entry.target);
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, siblingIndex * 100);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.querySelector(anchor.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

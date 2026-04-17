@@ -1,23 +1,23 @@
 User-agent: *
 Allow: /
-Disallow: /ai_strategy_proposal.html
+Disallow: /wesco/
 
 # Specifically allow AI search crawlers
 User-agent: GPTBot
 Allow: /
-Disallow: /ai_strategy_proposal.html
+Disallow: /wesco/
 
 User-agent: Claude-Web
 Allow: /
-Disallow: /ai_strategy_proposal.html
+Disallow: /wesco/
 
 User-agent: CCBot
 Allow: /
-Disallow: /ai_strategy_proposal.html
+Disallow: /wesco/
 
 User-agent: PerplexityBot
 Allow: /
-Disallow: /ai_strategy_proposal.html
+Disallow: /wesco/
 
 # Reference to the AI summary file
 Sitemap: https://jeonghyoungjae.github.io/jksoft-landing/llms.txt

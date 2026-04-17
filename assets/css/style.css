@@ -1254,3 +1254,47 @@ footer {
 .aio-code-block .hl-b { color: var(--rose-light); }
 .aio-code-block .hl-list { color: var(--text-secondary); }
 
+
+/* ===== AIO Lifecycle Banner ===== */
+.aio-lifecycle-box {
+  margin-top: 32px;
+  background: rgba(99, 102, 241, 0.05);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 16px;
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  backdrop-filter: blur(10px);
+}
+
+.aio-lifecycle-box .info-icon {
+  font-size: 28px;
+  width: 48px;
+  height: 48px;
+  background: var(--gradient-subtle);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.aio-lifecycle-content h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.aio-lifecycle-content p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.aio-lifecycle-content .highlight {
+  color: var(--indigo-light);
+  font-weight: 600;
+}

@@ -19,8 +19,16 @@ A scalable, modular SaaS platform architecture designed for business growth.
 ### 2. AIO (AI Optimization)
 Strategic content structuring for Generative AI search visibility.
 - Schema.org structured data automation
-- Semantic context authority building
+- Semantic indexing for AI and LLMs
 - AI search result citation strategy (ChatGPT, Gemini, Perplexity)
+- **AIO Verification Timeline**: Once AIO metadata (like JSON-LD and llms.txt) is applied, AI bots typically index the site within 1 to 3 days. Verification can be done by directly asking ChatGPT or Gemini about the brand.
+
+## Technology Stack
+JkSoft utilizes a robust and modern tech stack prioritizing type safety and zero-downtime scalability:
+- **Frontend**: React (Next.js), TypeScript
+- **Backend**: NestJS, Node.js, TypeScript
+- **Database**: Prisma, PostgreSQL
+- **Infrastructure**: Docker, CI/CD Pipeline (Zero Downtime), NHN Cloud
 
 ## Human Behind JkSoft
 - **Name**: Jeong Hyoung Jae

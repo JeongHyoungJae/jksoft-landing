@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAG 벡터 검색 기술 구현 가이드</title>
+  <style>
+    body {
+      font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    h1 { color: #1a365d; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; }
+    h2 { color: #2b6cb0; margin-top: 30px; border-bottom: 1px solid #e2e8f0; padding-bottom: 5px; }
+    h3 { color: #2c5282; margin-top: 25px; }
+    table { border-collapse: collapse; width: 100%; margin: 20px 0; }
+    th, td { border: 1px solid #cbd5e0; padding: 12px; text-align: left; }
+    th { background-color: #f7fafc; font-weight: bold; }
+    code { background-color: #edf2f7; padding: 2px 5px; border-radius: 3px; font-family: monospace; }
+    pre { background-color: #edf2f7; padding: 15px; border-radius: 5px; overflow-x: auto; }
+    blockquote { border-left: 4px solid #4299e1; background-color: #ebf8ff; margin: 0; padding: 10px 20px; }
+    .badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 0.85em; font-weight: bold; }
+    .badge-green { background-color: #c6f6d5; color: #22543d; }
+    .badge-yellow { background-color: #fefcbf; color: #744210; }
+    .badge-red { background-color: #fed7d7; color: #822727; }
+  </style>
+</head>
+<body>
+
+<h1>RAG 벡터 검색 기술 구현 가이드</h1>
+<p>AI 기반 사이트 검색 시스템의 기술적 구현 방안과 벡터 데이터 관리 전략을 정리합니다.</p>
+
+<h2>1. RAG(Retrieval-Augmented Generation) 개요</h2>
+<p>RAG는 <strong>사이트 내부 데이터만을 기반으로 AI가 답변을 생성</strong>하는 기술입니다. 외부 지식에 의존하지 않으므로 정확도가 높고, 토큰 비용이 최소화됩니다.</p>
+
+<h3>작동 흐름</h3>
+<pre><code>사용자 질문 입력
+    ↓
+① 질문을 벡터(Embedding)로 변환 — Gemini API
+    ↓
+② 벡터 DB에서 유사도 검색 — pgvector (PostgreSQL)
+    ↓
+③ 관련 콘텐츠 청크 추출 (상위 3~5개)
+    ↓
+④ 질문 + 관련 콘텐츠를 LLM에 전달 — Gemini API
+    ↓
+⑤ 사이트 정보 기반 답변 생성 → 사용자에게 응답
+</code></pre>
+
+<blockquote>
+<p>💡 <strong>핵심</strong>: LLM은 사이트 콘텐츠만을 context로 받기 때문에, 할루시네이션(허위 답변) 위험이 낮고 "우리 사이트에 없는 정보"는 답변하지 않도록 제어 가능합니다.</p>
+</blockquote>
+
+<h2>2. 벡터 데이터 생성 및 업데이트 주기</h2>
+
+<table>
+<thead>
+<tr>
+<th>시점</th>
+<th>작업 내용</th>
+<th>비용</th>
+<th>빈도</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>초기 구축</strong></td>
+<td>기존 사이트 전체 콘텐츠(기술문서, FAQ, 제품정보 등)를 벡터로 일괄 변환</td>
+<td>1회성 (초기 구축비에 포함)</td>
+<td>1회</td>
+</tr>
+<tr>
+<td><strong>콘텐츠 추가/수정 시</strong></td>
+<td>해당 글만 벡터로 변환하여 DB에 추가 (증분 업데이트)</td>
+<td>건당 0.01원 이하</td>
+<td>글 저장 시 자동</td>
+</tr>
+<tr>
+<td><strong>콘텐츠 삭제 시</strong></td>
+<td>해당 벡터 데이터 DB에서 제거</td>
+<td>무료 (DB 삭제)</td>
+<td>글 삭제 시 자동</td>
+</tr>
+<tr>
+<td><strong>전체 재인덱싱</strong></td>
+<td>임베딩 모델 변경, 청크 전략 수정 등 구조적 변경 시</td>
+<td>소량 (전체 문서 수에 비례)</td>
+<td>연 1~2회 이하</td>
+</tr>
+</tbody>
+</table>
+
+<blockquote>
+<p>⚠️ <strong>"최초 1회만 생성"은 아닙니다.</strong> 다만, CMS에서 글 저장 시 자동으로 해당 글만 벡터 변환되므로 <strong>운영자가 별도로 신경 쓸 일은 없습니다.</strong></p>
+</blockquote>
+
+<h2>3. 벡터 데이터 보관 위치</h2>
+
+<h3>옵션 비교</h3>
+<table>
+<thead>
+<tr>
+<th>방식</th>
+<th>설명</th>
+<th>추가 비용</th>
+<th>적합성</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>PostgreSQL + pgvector</strong></td>
+<td>기존 DB에 벡터 확장(Extension) 추가</td>
+<td>없음 (기존 DB 활용)</td>
+<td><span class="badge badge-green">✅ 추천</span></td>
+</tr>
+<tr>
+<td>Pinecone</td>
+<td>전용 벡터 DB SaaS</td>
+<td>월 $70~ (별도 과금)</td>
+<td><span class="badge badge-red">❌ 미권장</span></td>
+</tr>
+<tr>
+<td>Weaviate / Qdrant</td>
+<td>전용 벡터 DB (자체 호스팅)</td>
+<td>별도 서버 필요</td>
+<td><span class="badge badge-yellow">△ 과도</span></td>
+</tr>
+<tr>
+<td>ChromaDB</td>
+<td>경량 벡터 DB (임베디드)</td>
+<td>없음</td>
+<td><span class="badge badge-yellow">△ 소규모만</span></td>
+</tr>
+</tbody>
+</table>
+
+<h3>추천 아키텍처: PostgreSQL + pgvector</h3>
+<p>별도 벡터 DB 서버 없이 <strong>기존 NHN Cloud PostgreSQL 인스턴스 하나로 해결</strong>합니다.</p>
+<pre><code>NHN Cloud 서버 인프라
+├── NestJS API 서버
+│   ├── /api/search — AI 검색 엔드포인트
+│   └── /api/posts  — 게시물 CRUD (저장 시 자동 벡터 생성)
+│
+├── PostgreSQL + pgvector
+│   ├── posts 테이블          — 원본 콘텐츠 (제목, 본문, 카테고리)
+│   ├── post_chunks 테이블    — 본문을 의미 단위로 분할한 청크
+│   └── embeddings 테이블     — 각 청크의 벡터 데이터 (1536차원)
+│       └── HNSW 인덱스      — 고속 유사도 검색용 인덱스
+│
+└── 외부 API
+    └── Gemini API
+        ├── 임베딩 생성 (text-embedding-004)
+        └── 답변 생성 (gemini-2.0-flash)
+</code></pre>
+
+<h2>4. 토큰 비용 상세 분석</h2>
+
+<h3>검색 1건당 비용 (Gemini 2.0 Flash 기준)</h3>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>사용 API</th>
+<th>토큰 수</th>
+<th>비용 (원)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>질문 임베딩</td>
+<td>text-embedding-004</td>
+<td>~50 토큰</td>
+<td>약 0.001원</td>
+</tr>
+<tr>
+<td>답변 생성 (입력)</td>
+<td>gemini-2.0-flash</td>
+<td>~1,500 토큰 (질문 + context)</td>
+<td>약 0.02원</td>
+</tr>
+<tr>
+<td>답변 생성 (출력)</td>
+<td>gemini-2.0-flash</td>
+<td>~500 토큰</td>
+<td>약 0.03원</td>
+</tr>
+<tr>
+<td colspan="3"><strong>합계 (검색 1건)</strong></td>
+<td><strong>약 0.05원</strong></td>
+</tr>
+</tbody>
+</table>
+
+<h3>월간 비용 시뮬레이션</h3>
+<table>
+<thead>
+<tr>
+<th>일 검색 횟수</th>
+<th>월 검색 횟수</th>
+<th>월 예상 비용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>50건/일</td>
+<td>1,500건</td>
+<td>약 75원</td>
+</tr>
+<tr>
+<td>100건/일</td>
+<td>3,000건</td>
+<td>약 150원</td>
+</tr>
+<tr>
+<td>500건/일</td>
+<td>15,000건</td>
+<td>약 750원</td>
+</tr>
+<tr>
+<td>1,000건/일</td>
+<td>30,000건</td>
+<td>약 1,500원</td>
+</tr>
+</tbody>
+</table>
+
+<blockquote>
+<p>💡 하루 1,000건 검색이 발생해도 <strong>월 1,500원 수준</strong>입니다. 월 운영비 100만원 내의 AI API 예산(10~15만원)으로 충분히 커버됩니다.</p>
+</blockquote>
+
+<h2>5. CMS 자동화 연동 흐름</h2>
+
+<h3>게시물 저장 시 자동 벡터 생성</h3>
+<pre><code>관리자가 CMS에서 글 저장
+    ↓
+① 본문 텍스트를 의미 단위로 분할 (Chunking)
+   - 단락 기준 300~500자 단위
+   - 제목/소제목 컨텍스트 유지
+    ↓
+② 각 청크를 Gemini Embedding API로 벡터 변환
+    ↓
+③ 벡터 데이터를 PostgreSQL embeddings 테이블에 저장
+    ↓
+④ 동시에 AIO 메타데이터(스키마, 요약) 자동 생성
+    ↓
+✅ 완료 — 즉시 AI 검색에 반영
+</code></pre>
+
+<h3>검색 품질 개선 전략</h3>
+<ul>
+<li><strong>하이브리드 검색</strong>: 벡터 유사도 검색 + 키워드 전문 검색(Full-Text Search)을 결합하여 정확도 향상</li>
+<li><strong>메타데이터 필터링</strong>: 카테고리, 제품군, 기술 분야별 필터를 적용하여 검색 범위 제한</li>
+<li><strong>답변 출처 표시</strong>: AI 답변에 원본 문서 링크를 함께 제공하여 신뢰도 확보</li>
+<li><strong>피드백 루프</strong>: 사용자의 "도움이 됐어요/아니요" 반응을 수집하여 검색 품질 지속 개선</li>
+</ul>
+
+</body>
+</html>

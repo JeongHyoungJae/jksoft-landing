@@ -139,6 +139,16 @@
 
 <h3>추천 아키텍처: PostgreSQL + pgvector</h3>
 <p>별도 벡터 DB 서버 없이 <strong>기존 NHN Cloud PostgreSQL 인스턴스 하나로 해결</strong>합니다.</p>
+
+<h4>PostgreSQL + pgvector의 개념 및 장점</h4>
+<p><strong>pgvector</strong>는 전 세계적으로 가장 널리 사용되는 오픈소스 관계형 데이터베이스인 PostgreSQL에 벡터 저장 및 검색 기능을 추가하는 공식 확장 플러그인(Extension)입니다.</p>
+
+<ul>
+<li><strong>운영 복잡성 제로(Zero Complexity):</strong> 기존에 텍스트, 사용자 정보, 결제 내역 등을 저장하던 RDBMS(관계형 데이터베이스) 내에 벡터 데이터를 함께 저장할 수 있습니다. 즉, 별도의 전용 벡터 DB(Pinecone, Milvus 등)를 구축/배포/백업/모니터링할 필요가 없어 인프라 관리 비용이 획기적으로 절감됩니다.</li>
+<li><strong>하이브리드 검색(Hybrid Search) 최적화:</strong> 실제 비즈니스 환경에서는 단순한 "문장 유사도" 검색만으로 부족한 경우가 많습니다. 예를 들어 <em>"최근 3개월 이내에 작성된 기술 문서 중에서 '정전 보상'과 관련도가 높은 순서대로 찾아줘"</em> 와 같은 복합 질의가 필요합니다. pgvector를 사용하면 SQL 쿼리 하나로 <code>WHERE date > '2023-01-01'</code> (관계형 필터링)과 <code>ORDER BY embedding <-> '[...]'</code> (벡터 유사도 검색)을 동시에 완벽하게 처리할 수 있습니다.</li>
+<li><strong>데이터 정합성 보장(ACID Compliance):</strong> 게시글 원본 데이터와 벡터 데이터가 동일한 데이터베이스 내에 존재하므로 트랜잭션 관리가 용이합니다. 게시글이 삭제되면 동시에 해당 벡터 데이터도 확실하게 삭제(Cascade 제약조건 등 활용)되어 "고아(Orphan) 벡터"가 발생하는 문제를 원천 차단합니다.</li>
+<li><strong>NHN Cloud 완벽 호환:</strong> NHN Cloud를 비롯한 대부분의 클라우드 서비스 제공자(CSP)가 제공하는 Managed PostgreSQL 환경에서 <code>pgvector</code> 확장을 기본적으로 지원하거나 손쉽게 활성화할 수 있어 파편화 없이 메인 서버 아키텍처에 스며들 수 있습니다.</li>
+</ul>
 <pre><code>NHN Cloud 서버 인프라
 ├── NestJS API 서버
 │   ├── /api/search — AI 검색 엔드포인트

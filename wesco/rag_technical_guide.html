@@ -147,7 +147,7 @@
 <li><strong>운영 복잡성 제로(Zero Complexity):</strong> 기존에 텍스트, 사용자 정보, 결제 내역 등을 저장하던 RDBMS(관계형 데이터베이스) 내에 벡터 데이터를 함께 저장할 수 있습니다. 즉, 별도의 전용 벡터 DB(Pinecone, Milvus 등)를 구축/배포/백업/모니터링할 필요가 없어 인프라 관리 비용이 획기적으로 절감됩니다.</li>
 <li><strong>하이브리드 검색(Hybrid Search) 최적화:</strong> 실제 비즈니스 환경에서는 단순한 "문장 유사도" 검색만으로 부족한 경우가 많습니다. 예를 들어 <em>"최근 3개월 이내에 작성된 기술 문서 중에서 '정전 보상'과 관련도가 높은 순서대로 찾아줘"</em> 와 같은 복합 질의가 필요합니다. pgvector를 사용하면 SQL 쿼리 하나로 <code>WHERE date > '2023-01-01'</code> (관계형 필터링)과 <code>ORDER BY embedding <-> '[...]'</code> (벡터 유사도 검색)을 동시에 완벽하게 처리할 수 있습니다.</li>
 <li><strong>데이터 정합성 보장(ACID Compliance):</strong> 게시글 원본 데이터와 벡터 데이터가 동일한 데이터베이스 내에 존재하므로 트랜잭션 관리가 용이합니다. 게시글이 삭제되면 동시에 해당 벡터 데이터도 확실하게 삭제(Cascade 제약조건 등 활용)되어 "고아(Orphan) 벡터"가 발생하는 문제를 원천 차단합니다.</li>
-<li><strong>NHN Cloud 완벽 호환:</strong> NHN Cloud를 비롯한 대부분의 클라우드 서비스 제공자(CSP)가 제공하는 Managed PostgreSQL 환경에서 <code>pgvector</code> 확장을 기본적으로 지원하거나 손쉽게 활성화할 수 있어 파편화 없이 메인 서버 아키텍처에 스며들 수 있습니다.</li>
+<li><strong>NHN Cloud 완벽 호환 및 간편한 활성화:</strong> 별도의 서버 접속이나 패키지 설치 과정이 필요하지 않습니다. <strong>NHN Cloud의 RDS for PostgreSQL 제품은 <code>pgvector</code> 확장을 공식 지원</strong>하므로, DB 관리자 권한으로 <code>CREATE EXTENSION vector;</code> 명령어 한 줄만 실행하면 즉시 AI 기반 벡터 검색 기능을 활성화하여 사용할 수 있습니다.</li>
 </ul>
 <pre><code>NHN Cloud 서버 인프라
 ├── NestJS API 서버
@@ -165,6 +165,45 @@
         ├── 임베딩 생성 (text-embedding-004)
         └── 답변 생성 (gemini-2.0-flash)
 </code></pre>
+
+<h3>개발자 구현 vs 인프라 제공 기능 비교</h3>
+<p>pgvector를 도입할 경우, 복잡한 벡터 연산 알고리즘 및 인덱싱은 데이터베이스 계층에서 모두 처리되므로, 개발자는 비즈니스 로직 연동(API 호출 및 SQL 쿼리)에만 집중할 수 있습니다.</p>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>개발자 구현 영역 (NestJS / 클라이언트)</th>
+<th>인프라/시스템 제공 영역 (PostgreSQL / Gemini)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>데이터 임베딩(벡터화)</strong></td>
+<td>- 게시글을 의미 단위 청크로 분할 (Chunking)<br>- 텍스트를 Gemini API에 전송하여 임베딩 요청</td>
+<td>- <strong>Gemini API:</strong> 문장에 대한 고품질 1536차원 임베딩 배열 반환</td>
+</tr>
+<tr>
+<td><strong>저장 및 인덱싱</strong></td>
+<td>- 원본 데이터와 반환받은 벡터를 <code>INSERT</code> 하는 쿼리 실행</td>
+<td>- <strong>PostgreSQL (pgvector):</strong> 최적화된 자료형으로 데이터 저장<br>- 내부적으로 <strong>HNSW 인덱싱</strong>을 통한 검색 트리 구성</td>
+</tr>
+<tr>
+<td><strong>데이터 검색 (검색어 입력)</strong></td>
+<td>- 사용자의 질문을 다시 벡터화<br>- <code>ORDER BY embedding &lt;-&gt; '[질문벡터]' LIMIT 5</code> 쿼리 실행</td>
+<td>- <strong>pgvector 엔진:</strong> 코사인 거리/L2 거리 연산으로 수만 건 중 가장 유사도 높은 문서 고속 탐색</td>
+</tr>
+<tr>
+<td><strong>조건부 필터링(하이브리드)</strong></td>
+<td>- 작성일, 카테고리 등 <code>WHERE</code> 조건식 조합</td>
+<td>- <strong>PostgreSQL:</strong> 일반 컬럼 인덱스와 벡터 인덱스를 결합 연산</td>
+</tr>
+<tr>
+<td><strong>최종 답변 생성</strong></td>
+<td>- 검색된 문서의 본문 내용을 프롬프트에 담아 Gemini에 전달<br>- 클라이언트에 스트리밍 또는 단일 응답</td>
+<td>- <strong>Gemini API:</strong> 제공된 컨텍스트를 기반으로 사용자 질문에 맞는 정확하고 자연스러운 형태의 답변(RAG) 생성</td>
+</tr>
+</tbody>
+</table>
 
 <h2>4. 토큰 비용 상세 분석</h2>
 

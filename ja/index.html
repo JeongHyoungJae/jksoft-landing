@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/style.css?v=1.0.1">
+  <link rel="stylesheet" href="../assets/css/style.css?v=1.0.2">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -53,6 +53,7 @@
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#vibe">Vibe</a></li>
+      <li><a href="#updates">Updates</a></li>
       <li><a href="#tech">Tech Stack</a></li>
       <li><a href="#aio">AI Optimization</a></li>
       <li><a href="profile.html">Profile</a></li>
@@ -172,6 +173,103 @@
           <h3>エンタープライズ級セキュリティ</h3>
           <p>JWTベースの認証、役割ベースのアクセス制御(RBAC)、テナント間の完全なデータ分離により、エンタープライズ級のセキュリティ水準を維持します。</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest Updates Section -->
+  <section id="updates">
+    <div class="section-container">
+      <div class="updates-header animate-on-scroll">
+        <span class="section-label">Latest Updates</span>
+        <h2 class="section-title">最新のコア機能</h2>
+        <p class="section-desc">
+          Vibeプラットフォームは絶えず進化しています。AI検索、リアルタイムプッシュ通知、多言語対応まで — 最近完了した主要アップデートをご紹介します。
+        </p>
+      </div>
+      <div class="updates-grid">
+
+        <!-- AI RAG 検索 -->
+        <div class="update-card animate-on-scroll">
+          <div class="update-card-header">
+            <div class="update-icon">🔍</div>
+            <span class="update-badge">2026.04</span>
+          </div>
+          <h3>サイト内AI検索 (RAG)</h3>
+          <p>ユーザーが自然言語で質問すると、AIがサイト内の全投稿を分析し、最適な回答を生成します。</p>
+          <ul class="update-highlights">
+            <li>pgvector基盤 768次元ベクトルセマンティック検索</li>
+            <li>Gemini Embedding + RAG回答自動生成</li>
+            <li>テナント別日次検索制限およびポリシー管理</li>
+          </ul>
+          <div class="update-tags">
+            <span class="update-tag">pgvector</span>
+            <span class="update-tag">Gemini</span>
+            <span class="update-tag">RAG</span>
+            <span class="update-tag">HNSW</span>
+          </div>
+        </div>
+
+        <!-- ウェブプッシュ通知 -->
+        <div class="update-card animate-on-scroll">
+          <div class="update-card-header">
+            <div class="update-icon">🔔</div>
+            <span class="update-badge">2026.05</span>
+          </div>
+          <h3>ウェブプッシュ通知 (FCM)</h3>
+          <p>Firebase Cloud Messaging基盤のリアルタイム通知システムで、新しいコンテンツをファンに即座に届けます。</p>
+          <ul class="update-highlights">
+            <li>iOS PWA Smart Bannerの自動検出および誘導</li>
+            <li>サイト内通知センター (Bellアイコン + 未読バッジ)</li>
+            <li>投稿の重要度別プッシュ配信ポリシー (Normal / Important)</li>
+          </ul>
+          <div class="update-tags">
+            <span class="update-tag">FCM</span>
+            <span class="update-tag">PWA</span>
+            <span class="update-tag">Service Worker</span>
+          </div>
+        </div>
+
+        <!-- 多言語メニュー -->
+        <div class="update-card animate-on-scroll">
+          <div class="update-card-header">
+            <div class="update-icon">🌐</div>
+            <span class="update-badge">2026.05</span>
+          </div>
+          <h3>多言語メニューシステム (i18n)</h3>
+          <p>メニュー名を言語別に管理し、AIが自動翻訳します。4ヶ国語をネイティブにサポートします。</p>
+          <ul class="update-highlights">
+            <li>MenuTranslation分離テーブルでメニュー名の多言語管理</li>
+            <li>🤖 AI自動翻訳ボタンで空の言語を一括補完</li>
+            <li>localeパラメータ基盤の動的フォールバック (翻訳がなければデフォルト言語)</li>
+          </ul>
+          <div class="update-tags">
+            <span class="update-tag">i18n</span>
+            <span class="update-tag">4ヶ国語</span>
+            <span class="update-tag">AI翻訳</span>
+          </div>
+        </div>
+
+        <!-- GA4 ダッシュボード -->
+        <div class="update-card animate-on-scroll">
+          <div class="update-card-header">
+            <div class="update-icon">📈</div>
+            <span class="update-badge">2026.04</span>
+          </div>
+          <h3>GA4アナリティクスダッシュボード</h3>
+          <p>Google Analytics 4 Data APIを連携し、管理ダッシュボードでリアルタイムのアクセス統計を確認します。</p>
+          <ul class="update-highlights">
+            <li>国・言語別訪問者統計ウィジェット</li>
+            <li>人気投稿TOP 5リアルタイムランキング</li>
+            <li>平均滞在時間、流入経路、新規/再訪問率</li>
+          </ul>
+          <div class="update-tags">
+            <span class="update-tag">GA4</span>
+            <span class="update-tag">Data API</span>
+            <span class="update-tag">Dashboard</span>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -355,6 +453,7 @@ Strategic content structuring for Generative AI search visibility.
         <h4>サービス</h4>
         <ul>
           <li><a href="#vibe">Vibe Platform</a></li>
+          <li><a href="#updates">Latest Updates</a></li>
           <li><a href="#aio">AI Optimization</a></li>
           <li><a href="#tech">Tech Stack</a></li>
         </ul>

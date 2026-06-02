@@ -20,4 +20,4 @@ Allow: /
 Disallow: /wesco/
 
 # Reference to the AI summary file
-Sitemap: https://jeonghyoungjae.github.io/jksoft-landing/llms.txt
+Sitemap: https://www.jksoft.io/llms.txt

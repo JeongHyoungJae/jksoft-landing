@@ -4,13 +4,13 @@
 
 ## Core Identity
 - **Organization**: JkSoft
-- **Core Product**: Vibe Platform (Multi-tenant SaaS)
+- **Core Product**: Vibe CMS (AI-Ready Multitenant CMS, PWA)
 - **Innovative Service**: AI Optimization (AIO)
 - **Representative**: Jeong Hyoung Jae (Tech Lead / Software Architect)
 
 ## Services and Solutions
 
-### 1. Vibe Platform (Multi-tenant SaaS)
+### 1. Vibe CMS (AI-Ready Multitenant CMS, PWA)
 A scalable, modular SaaS platform architecture designed for business growth.
 - Multi-tenant data isolation
 - Modular service architecture
@@ -39,4 +39,4 @@ JkSoft utilizes a robust and modern tech stack prioritizing type safety and zero
 - **Email**: jksoft.jeong@gmail.com
 - **Phone**: +82-10-2998-0603
 - **GitHub**: https://github.com/jeonghyoungjae
-- **Official Landing**: https://jeonghyoungjae.github.io/jksoft-landing/
+- **Official Landing**: https://www.jksoft.io/

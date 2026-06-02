@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Korean: Main Landing -->
+  <url>
+    <loc>https://www.jksoft.io/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.jksoft.io/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.jksoft.io/ja/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.jksoft.io/" />
+  </url>
+
+  <!-- Korean: Profile -->
+  <url>
+    <loc>https://www.jksoft.io/profile.html</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.jksoft.io/profile.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.jksoft.io/ja/profile.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.jksoft.io/profile.html" />
+  </url>
+
+  <!-- Japanese: Main Landing -->
+  <url>
+    <loc>https://www.jksoft.io/ja/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.jksoft.io/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.jksoft.io/ja/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.jksoft.io/" />
+  </url>
+
+  <!-- Japanese: Profile -->
+  <url>
+    <loc>https://www.jksoft.io/ja/profile.html</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.jksoft.io/profile.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.jksoft.io/ja/profile.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.jksoft.io/profile.html" />
+  </url>
+
+  <!-- LLMs.txt (AI Agent Metadata) -->
+  <url>
+    <loc>https://www.jksoft.io/llms.txt</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+</urlset>

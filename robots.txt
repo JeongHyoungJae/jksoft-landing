@@ -11,6 +11,10 @@ User-agent: Claude-Web
 Allow: /
 Disallow: /wesco/
 
+User-agent: ClaudeBot
+Allow: /
+Disallow: /wesco/
+
 User-agent: CCBot
 Allow: /
 Disallow: /wesco/
@@ -19,5 +23,10 @@ User-agent: PerplexityBot
 Allow: /
 Disallow: /wesco/
 
-# Reference to the AI summary file
+User-agent: Google-Extended
+Allow: /
+Disallow: /wesco/
+
+# Sitemap and AI summary
+Sitemap: https://www.jksoft.io/sitemap.xml
 Sitemap: https://www.jksoft.io/llms.txt

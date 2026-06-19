@@ -71,17 +71,17 @@
 
   <!-- Navigation -->
   <nav id="navbar">
-    <a href="index.html" class="nav-logo" aria-label="JkSoft Home">
+    <a href="index.html" class="nav-logo" aria-label="JkSoft ホームへ移動">
       <div class="logo-icon"><img src="../assets/images/logo.png" alt="JkSoft"></div>
       <span>JkSoft</span>
     </a>
     <ul class="nav-links">
-      <li><a href="#about">About</a></li>
       <li><a href="#vibe">Vibe CMS</a></li>
       <li><a href="#search">AI Search</a></li>
-      <li><a href="#updates">Updates</a></li>
-      <li><a href="#tech">Tech Stack</a></li>
       <li><a href="#aio">AI Optimization</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#tech-belt">Tech</a></li>
+      <li><a href="#updates">Updates</a></li>
       <li><a href="profile.html">Profile</a></li>
     </ul>
     <div style="display: flex; gap: 20px; align-items: center;">
@@ -115,6 +115,350 @@
       <div class="hero-buttons">
         <a href="#vibe"><button class="btn-primary">Vibe CMSの詳細を見る →</button></a>
       </div>
+      <!-- Product Screenshot Mockup -->
+      <div class="hero-screenshot-wrapper animate-on-scroll">
+        <div class="hero-screenshot">
+          <img src="../assets/images/hero-dashboard.png" alt="Vibe CMS ダッシュボード プレビュー">
+        </div>
+        <div class="hero-screenshot-fade"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================== -->
+  <!-- Vibe CMS Section — Full-Width Visual Blocks    -->
+  <!-- ============================================== -->
+  <section id="vibe">
+    <div class="section-container">
+      <div class="vibe-header animate-on-scroll" style="text-align:center;">
+        <span class="section-label">Vibe CMS</span>
+        <h2 class="section-title">一つの記事が、AIの回答になる。</h2>
+        <p class="section-desc" style="margin-left:auto;margin-right:auto;">
+          CMSにコンテンツを作成すると、AIが自動的に加工してChatGPT・Geminiの公式回答ソースとして引用されます。
+        </p>
+      </div>
+
+      <!-- Feature A: Multi-site -->
+      <div class="feature-block animate-on-scroll">
+        <div class="feature-block-text">
+          <h3>一つの管理画面、<br>無限のサイト</h3>
+          <p>各サイトは独立ドメイン・独立データで安全に運用されます。一つの統合管理者画面からすべてのサイトを制御できます。</p>
+        </div>
+        <div class="feature-block-visual">
+          <div class="visual-multi-site">
+            <div class="mini-browser">
+              <div class="mini-browser-bar"><span class="mini-browser-dot"></span><span class="mini-browser-dot"></span><span class="mini-browser-dot"></span></div>
+              <div class="mini-browser-body">
+                <div class="line" style="width:80%; background:var(--indigo);"></div>
+                <div class="line" style="width:60%; background:var(--rose);"></div>
+                <div class="line" style="width:90%; background:rgba(255,255,255,0.15);"></div>
+                <div class="line" style="width:40%; background:rgba(255,255,255,0.1);"></div>
+              </div>
+            </div>
+            <div class="mini-browser">
+              <div class="mini-browser-bar"><span class="mini-browser-dot"></span><span class="mini-browser-dot"></span><span class="mini-browser-dot"></span></div>
+              <div class="mini-browser-body">
+                <div class="line" style="width:70%; background:#a855f7;"></div>
+                <div class="line" style="width:50%; background:var(--indigo);"></div>
+                <div class="line" style="width:85%; background:rgba(255,255,255,0.15);"></div>
+                <div class="line" style="width:35%; background:rgba(255,255,255,0.1);"></div>
+              </div>
+            </div>
+            <div class="mini-browser">
+              <div class="mini-browser-bar"><span class="mini-browser-dot"></span><span class="mini-browser-dot"></span><span class="mini-browser-dot"></span></div>
+              <div class="mini-browser-body">
+                <div class="line" style="width:65%; background:var(--rose);"></div>
+                <div class="line" style="width:45%; background:#34d399;"></div>
+                <div class="line" style="width:75%; background:rgba(255,255,255,0.15);"></div>
+                <div class="line" style="width:55%; background:rgba(255,255,255,0.1);"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature B: AI-Ready Data -->
+      <div class="feature-block reverse animate-on-scroll">
+        <div class="feature-block-text">
+          <h3>記事を書けば、<br>AIが読めるデータに変換</h3>
+          <p>Geminiが即座に本文を解析してAI-Ready Dataに自動加工します。ChatGPT、GeminiなどのAIエージェントが最も好む形式で配信されます。</p>
+        </div>
+        <div class="feature-block-visual">
+          <div class="visual-ai-process">
+            <div class="ai-process-row">
+              <div class="ai-input-block">📝 "ロモンの次のコンサート日程は7月18日 ソウルオリンピックホール..."</div>
+              <div class="ai-arrow">→</div>
+              <div class="ai-output-block">{ "event": "<span class="ai-highlight">concert</span>",<br>&nbsp;&nbsp;"date": "<span class="ai-highlight">2026-07-18</span>",<br>&nbsp;&nbsp;"venue": "<span class="ai-highlight">オリンピックホール</span>" }</div>
+            </div>
+            <div class="ai-process-row">
+              <div class="ai-input-block">📄 一般テキスト投稿</div>
+              <div class="ai-arrow">→</div>
+              <div class="ai-output-block">🤖 llms.txt + Schema.org 自動加工</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature C: Multilingual -->
+      <div class="feature-block animate-on-scroll">
+        <div class="feature-block-text">
+          <h3>ワンクリックで<br>4ヶ国語完成</h3>
+          <p>韓・英・日・中 ワンクリックAI翻訳。検索エンジンとAIクローラー最適化パスを自動設計します。</p>
+        </div>
+        <div class="feature-block-visual">
+          <div class="visual-language">
+            <div class="lang-toggle-bar">
+              <span class="lang-toggle-btn active">한국어</span>
+              <span class="lang-toggle-btn">English</span>
+              <span class="lang-toggle-btn">日本語</span>
+              <span class="lang-toggle-btn">中文</span>
+            </div>
+            <div class="lang-card">
+              🌐 AIが自動翻訳した多言語コンテンツが<br>各言語パス(/ko, /en, /ja, /zh)に即座に配信されます。
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature D: Dashboard & Security -->
+      <div class="feature-block reverse animate-on-scroll">
+        <div class="feature-block-text">
+          <h3>すべてのデータを一目で、<br>鉄壁セキュリティ</h3>
+          <p>会員・投稿・問い合わせ統合モニタリング。JWT + RBAC + 完全なテナントデータ分離でエンタープライズ級セキュリティを保証します。</p>
+        </div>
+        <div class="feature-block-visual">
+          <div class="visual-dashboard">
+            <div class="dash-card">
+              <div class="dash-card-value">1,284</div>
+              <div class="dash-card-label">総会員数</div>
+            </div>
+            <div class="dash-card">
+              <div class="dash-card-value">356</div>
+              <div class="dash-card-label">総投稿数</div>
+            </div>
+            <div class="dash-bar-chart">
+              <div class="dash-bar" style="height:40%; background:var(--indigo);"></div>
+              <div class="dash-bar" style="height:65%; background:#a855f7;"></div>
+              <div class="dash-bar" style="height:50%; background:var(--rose);"></div>
+              <div class="dash-bar" style="height:80%; background:var(--indigo);"></div>
+              <div class="dash-bar" style="height:55%; background:#a855f7;"></div>
+              <div class="dash-bar" style="height:70%; background:var(--rose);"></div>
+              <div class="dash-bar" style="height:45%; background:var(--indigo);"></div>
+            </div>
+            <div class="security-badges">
+              <span class="security-badge">✓ JWT認証</span>
+              <span class="security-badge">✓ RBAC権限</span>
+              <span class="security-badge">✓ データ分離</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================== -->
+  <!-- AI Intelligent Search — Sticky Stepper         -->
+  <!-- ============================================== -->
+  <section id="search" class="sticky-section" style="background: linear-gradient(180deg, var(--bg-dark) 0%, rgba(99,102,241,0.06) 50%, var(--bg-dark) 100%);">
+    <div class="section-container">
+      <div class="sticky-header animate-on-scroll">
+        <span class="section-label">AI Intelligent Search</span>
+        <h2 class="section-title">自然言語で問いかけ、<br>AIがリアルタイムで回答します</h2>
+        <p class="section-desc">サイト内部のすべてのデータをリアルタイムでベクトル化し、RAGベースのインテリジェント検索環境を提供します。</p>
+      </div>
+      <div class="sticky-scroll-area">
+        <div class="sticky-inner">
+          <!-- Step List -->
+          <div class="stepper-list" id="searchStepperList">
+            <div class="stepper-item active" data-step="0" onclick="setStep('search', 0)">
+              <div class="stepper-progress"><div class="stepper-progress-bar"></div></div>
+              <div class="stepper-step-num">1</div>
+              <h4>質問分析 & エンベディング</h4>
+              <p>自然言語の質問を多言語エンベディングAPIを通じてベクトルに変換します。</p>
+            </div>
+            <div class="stepper-item" data-step="1" onclick="setStep('search', 1)">
+              <div class="stepper-progress"><div class="stepper-progress-bar"></div></div>
+              <div class="stepper-step-num">2</div>
+              <h4>ベクトル類似度マッチング</h4>
+              <p>pgvectorベースのデータベースからミリ秒(ms)単位で類似投稿を抽出します。</p>
+            </div>
+            <div class="stepper-item" data-step="2" onclick="setStep('search', 2)">
+              <div class="stepper-progress"><div class="stepper-progress-bar"></div></div>
+              <div class="stepper-step-num">3</div>
+              <h4>Gemini RAG回答</h4>
+              <p>抽出された元の投稿をコンテキストとしてLLMに渡し、正確な回答と出典を生成します。</p>
+            </div>
+          </div>
+          <!-- Visual Panels -->
+          <div class="stepper-visual" id="searchStepperVisual">
+            <!-- Panel 1: Embedding -->
+            <div class="visual-panel active" data-step="0">
+              <div class="embed-demo">
+                <div class="embed-query">💬 "ロモンの次のコンサート日程はいつ？"</div>
+                <div style="text-align:center; font-size:20px; color:var(--indigo-light);">↓ トークン化</div>
+                <div class="embed-tokens">
+                  <span class="embed-token">ロモン</span>
+                  <span class="embed-token">コンサート</span>
+                  <span class="embed-token">日程</span>
+                  <span class="embed-token">いつ</span>
+                </div>
+                <div style="text-align:center; font-size:20px; color:var(--rose);">↓ ベクトル変換</div>
+                <div class="embed-vector">[0.153, -0.421, 0.892, 0.067, -0.334, 0.718, ...]</div>
+              </div>
+            </div>
+            <!-- Panel 2: Vector DB -->
+            <div class="visual-panel" data-step="1">
+              <div class="vector-db-demo">
+                <div class="db-node match" style="top:20px; left:30%;">📄<span class="db-score">0.94</span></div>
+                <div class="db-node" style="top:10px; left:65%;">📄</div>
+                <div class="db-node match" style="top:100px; left:15%;">📄<span class="db-score">0.87</span></div>
+                <div class="db-node" style="top:90px; left:50%;">📄</div>
+                <div class="db-node match" style="top:80px; left:75%;">📄<span class="db-score">0.82</span></div>
+                <div class="db-node" style="top:180px; left:25%;">📄</div>
+                <div class="db-node" style="top:170px; left:60%;">📄</div>
+                <div class="db-node" style="top:160px; left:85%;">📄</div>
+              </div>
+            </div>
+            <!-- Panel 3: RAG Answer -->
+            <div class="visual-panel" data-step="2">
+              <div class="rag-demo">
+                <div class="rag-context">
+                  <span class="rag-context-chip">📄 コンサート告知 (0.94)</span>
+                  <span class="rag-context-chip">📄 アーティストプロフィール (0.87)</span>
+                  <span class="rag-context-chip">📄 チケット案内 (0.82)</span>
+                </div>
+                <div class="rag-answer-box">
+                  <div class="rag-answer-label">🤖 Gemini RAG 回答</div>
+                  <div class="rag-answer-text">
+                    アーティスト ロモン(Lomon)の次のライブコンサートは<strong>2026年7月18日</strong>にソウル オリンピックホールで開催予定です。チケット予約日程やグローバルファンクラブ先行予約の詳細は公式サイトをご確認ください。<span class="rag-answer-cursor"></span>
+                  </div>
+                  <span class="rag-source-chip">🔗 出典: Information — '2026 Lomon Live Concert 案内'</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================== -->
+  <!-- AI Optimization — Sticky Stepper               -->
+  <!-- ============================================== -->
+  <section id="aio" class="sticky-section">
+    <div class="section-container">
+      <div class="sticky-header animate-on-scroll">
+        <span class="section-label">AI Optimization</span>
+        <h2 class="section-title">AIエージェント時代に<br>備える新たなマーケティング</h2>
+        <p class="section-desc">CMSに記事を書くだけで、AIエージェントが最も好む形式に自動加工され、公式ソースとして引用されます。</p>
+      </div>
+      <div class="sticky-scroll-area">
+        <div class="sticky-inner">
+          <!-- Step List -->
+          <div class="stepper-list" id="aioStepperList">
+            <div class="stepper-item active" data-step="0" onclick="setStep('aio', 0)">
+              <div class="stepper-progress"><div class="stepper-progress-bar"></div></div>
+              <div class="stepper-step-num">1</div>
+              <h4>コンテンツ作成</h4>
+              <p>管理者がCMSで一般テキストとして投稿を作成します。</p>
+            </div>
+            <div class="stepper-item" data-step="1" onclick="setStep('aio', 1)">
+              <div class="stepper-progress"><div class="stepper-progress-bar"></div></div>
+              <div class="stepper-step-num">2</div>
+              <h4>AI自動分析</h4>
+              <p>Gemini AIが本文からコアキーワードとカテゴリを抽出します。</p>
+            </div>
+            <div class="stepper-item" data-step="2" onclick="setStep('aio', 2)">
+              <div class="stepper-progress"><div class="stepper-progress-bar"></div></div>
+              <div class="stepper-step-num">3</div>
+              <h4>AIOデータ自動加工</h4>
+              <p>AIエージェントがインデックス可能なllms.txtなどの構造化データを自動生成します。</p>
+            </div>
+            <div class="stepper-item" data-step="3" onclick="setStep('aio', 3)">
+              <div class="stepper-progress"><div class="stepper-progress-bar"></div></div>
+              <div class="stepper-step-num">4</div>
+              <h4>AIエージェント公式引用</h4>
+              <p>ChatGPT、Geminiなどが該当コンテンツを信頼できる公式ソースとして引用します。</p>
+            </div>
+          </div>
+          <!-- Visual Panels -->
+          <div class="stepper-visual" id="aioStepperVisual">
+            <!-- Panel 1: CMS Editor -->
+            <div class="visual-panel active" data-step="0">
+              <div class="cms-editor-demo">
+                <div class="editor-toolbar">
+                  <span class="editor-tool-btn"><b>B</b></span>
+                  <span class="editor-tool-btn"><i>I</i></span>
+                  <span class="editor-tool-btn">🔗</span>
+                  <span class="editor-tool-btn">📷</span>
+                  <span class="editor-tool-btn">≡</span>
+                </div>
+                <div class="editor-body">
+                  <strong>2026 Lomon Live Concert 案内</strong><br><br>
+                  アーティスト ロモン(Lomon)の韓国単独コンサートが2026年7月18日にソウル オリンピックホールで開催されます。グローバルファンクラブ会員先行予約は6月25日から開始されます...
+                </div>
+              </div>
+            </div>
+            <!-- Panel 2: Scanner -->
+            <div class="visual-panel" data-step="1">
+              <div class="scanner-demo">
+                <div class="scanner-text">
+                  <div class="scanner-line"></div>
+                  アーティスト <span class="scanner-keyword">ロモン(Lomon)</span>の韓国単独 <span class="scanner-keyword">コンサート</span>が <span class="scanner-keyword">2026年7月18日</span> ソウル <span class="scanner-keyword">オリンピックホール</span>で開催されます。グローバル <span class="scanner-keyword">ファンクラブ</span> 会員先行予約は6月25日から開始されます。
+                </div>
+                <div class="scanner-extracted">
+                  <span class="scanner-tag">🏷️ ロモン</span>
+                  <span class="scanner-tag">🎵 コンサート</span>
+                  <span class="scanner-tag">📅 2026-07-18</span>
+                  <span class="scanner-tag">📍 オリンピックホール</span>
+                  <span class="scanner-tag">🎫 ファンクラブ先行予約</span>
+                </div>
+              </div>
+            </div>
+            <!-- Panel 3: Code Build -->
+            <div class="visual-panel" data-step="2">
+              <div class="code-build-demo">
+                <div class="code-build-header">
+                  <span>llms.txt</span>
+                  <span>Auto-generated by Gemini</span>
+                </div>
+                <div class="code-build-body">
+<span class="code-key"># Lomon Official</span><br>
+<span class="code-comment">> Official website for artist Lomon.</span><br><br>
+<span class="code-key">## Upcoming Events</span><br>
+<span class="code-key">- Event:</span> <span class="code-val">2026 Lomon Live Concert</span><br>
+<span class="code-key">- Date:</span> <span class="code-val">2026-07-18</span><br>
+<span class="code-key">- Venue:</span> <span class="code-val">Seoul Olympic Hall</span><br>
+<span class="code-key">- Pre-sale:</span> <span class="code-val">Fan club from June 25</span>
+                </div>
+              </div>
+            </div>
+            <!-- Panel 4: Citation -->
+            <div class="visual-panel" data-step="3">
+              <div class="citation-demo">
+                <div class="citation-chat-window">
+                  <div class="citation-chat-header">🤖 ChatGPT</div>
+                  <div class="citation-chat-body">
+                    <div class="citation-msg">
+                      ロモンの次のコンサートは<strong>2026年7月18日</strong>にソウル オリンピックホールで開催予定です。グローバルファンクラブ先行予約は6月25日から開始されます。
+                    </div>
+                    <span class="citation-source-link">🔗 出典: lomon.jksoft.io</span>
+                  </div>
+                </div>
+                <div class="citation-chat-window">
+                  <div class="citation-chat-header">✨ Gemini</div>
+                  <div class="citation-chat-body">
+                    <div class="citation-msg">
+                      公式サイト(lomon.jksoft.io)によると、ロモンのソウルコンサートが7月18日にオリンピックホールで開催されます。
+                    </div>
+                    <span class="citation-source-link">🔗 出典: lomon.jksoft.io</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -124,15 +468,15 @@
       <div class="about-grid">
         <div class="about-text animate-on-scroll">
           <span class="section-label">About JkSoft</span>
-          <h2 class="section-title">技術で繋ぎ、<br>プラットフォームとして<span style="display:inline-block;">成長する</span></h2>
+          <h2 class="section-title">技術で繋ぎ、<br>プラットフォームとして成長する</h2>
           <h3>"Stay Connected"</h3>
           <p>
-            JkSoftはフルスタックSaaSアーキテクチャ専門の<span style="display:inline-block;">ソフトウェア・</span><span style="display:inline-block;">エンジニアリング</span>チームです。
-            単なるWeb制作を超え、<strong>マルチテナント基盤の<span style="display:inline-block;">インテリジェント・</span><span style="display:inline-block;">プラットフォーム</span></strong>を設計・構築します。
+            JkSoftはフルスタックSaaSアーキテクチャ専門のソフトウェアエンジニアリングチームです。
+            単なるWeb制作を超え、<strong>マルチテナント基盤のインテリジェント・プラットフォーム</strong>を設計・構築します。
           </p>
           <p>
             単一の共有インフラ上で複数の顧客企業を同時に運用しながらも、
-            データの分離とブランドのパーソナライズを完全に保証する。これがJkSoftの技術の方向性です。
+            データの分離とブランドのパーソナライズを完全に保証する — これがJkSoftの技術の方向性です。
           </p>
         </div>
         <div class="about-stats animate-on-scroll">
@@ -157,507 +501,266 @@
     </div>
   </section>
 
-  <!-- Vibe CMS Section -->
-  <section id="vibe">
+  <!-- Tech Stack — Logo Belt -->
+  <section id="tech-belt">
     <div class="section-container">
-      <div class="vibe-header animate-on-scroll">
-        <span class="section-label">Vibe CMS</span>
-        <h2 class="section-title">Vibe CMS — 感性とAI技術の連結</h2>
-        <p class="section-desc">
-          Vibe CMSはアーティストとファンを繋ぐ最新の統合ファンダム管理ソリューションです。
-          新たなマルチウェブサイトを即座に開設し、作成されたコンテンツをAIエージェント向けに最適化して広く配信します。
-        </p>
+      <div class="animate-on-scroll">
+        <span class="section-label">Technology</span>
+        <h2 class="section-title">グローバル標準技術アーキテクチャ</h2>
       </div>
-      <div class="feature-cards">
-        <div class="feature-card animate-on-scroll">
-          <div class="feature-icon">🏢</div>
-          <h3>独立型マルチサイト管理</h3>
-          <p>単一の管理コンソールから複数のサイトを個別ドメインで安全に独立運用します。徹底したデータ分離により、安心してご利用いただけます。</p>
-        </div>
-        <div class="feature-card animate-on-scroll">
-          <div class="feature-icon">🤖</div>
-          <h3>AIエージェント最適化データの自動加工</h3>
-          <p>CMSで記事を作成すると、AI(Gemini)が自動で分析し、ChatGPTやGeminiなどのAIエージェントが最も信頼し引用しやすい形式（AI-Ready Data）へ自動で加工・配信します。</p>
-        </div>
-        <div class="feature-card animate-on-scroll">
-          <div class="feature-icon">🌐</div>
-          <h3>グローバル多言語ワンクリック対応</h3>
-          <p>韓国語、英語、日本語、中国語をワンクリックでサポートします。検索ロボットやAIクローラーが理解しやすいよう、多言語パスが最適化されています。</p>
-        </div>
-        <div class="feature-card animate-on-scroll">
-          <div class="feature-icon">📊</div>
-          <h3>統合ダッシュボード</h3>
-          <p>テナント別の会員状況、投稿統計、問い合わせ管理などを直感的な単一ダッシュボードでリアルタイムに監視します。</p>
-        </div>
-        <div class="feature-card animate-on-scroll">
-          <div class="feature-icon">🎨</div>
-          <h3>ホワイトラベル</h3>
-          <p>各テナントごとに独自のロゴ、カラー、サイト名を適用できます。管理者画面でも選択されているテナントのブランドがリアルタイムに反映されます。</p>
-        </div>
-        <div class="feature-card animate-on-scroll">
-          <div class="feature-icon">🔒</div>
-          <h3>エンタープライズ級セキュリティ</h3>
-          <p>強固なアクセス権限管理と、テナント間におけるデータの完全な分離設計により、大企業水準のセキュリティ環境を維持します。</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- AI Search Section -->
-  <section id="search">
-    <div class="section-container">
-      <div class="search-grid">
-        <div class="search-info animate-on-scroll">
-          <span class="section-label">AI Intelligent Search</span>
-          <h2 class="section-title">自然言語で問いかけ、<br>AIがリアルタイムで回答する「サイト内検索」</h2>
-          <p class="section-desc">
-            Vibe CMSは単なるキーワード一致検索を超え、サイト内部のすべての投稿やページデータをリアルタイムでベクトル化し、RAG（検索拡張生成）ベース of スマートなインテリジェント検索環境を提供します。
-          </p>
-          <div class="search-pipeline">
-            <div class="pipeline-step">
-              <div class="step-num">1</div>
-              <div class="step-text">
-                <h4>質問分析＆埋め込み生成</h4>
-                <p>ユーザーが入力した自然言語による質問 of 意図を分析し、多言語対応 of エンベディングAPIを通じて質問ベクトルに変換します.</p>
-              </div>
-            </div>
-            <div class="pipeline-step">
-              <div class="step-num">2</div>
-              <div class="step-text">
-                <h4>pgvector基盤의 高速類似度マッチング</h4>
-                <p>データベース（PostgreSQL）의 벡터 인덱스를 사용하여 질문과 유사도가 가장 높은 게시글을 밀리초(ms) 단위로 고속 추출합니다.</p>
-              </div>
-            </div>
-            <div class="pipeline-step">
-              <div class="step-num">3</div>
-              <div class="step-text">
-                <h4>Gemini AI RAG回答＆ソース表示</h4>
-                <p>抽出されたオリジナルコンテンツの信頼できるテキスト情報をコンテキストとしてLLM（Gemini）へ伝達し、正確な回答を生成。参考にした実際の投稿リンクなどの出所を同時に表示します. リアルタイムのタイピングアニメーションに対応しています.</p>
-              </div>
-            </div>
+      <div class="logo-belt-wrapper">
+        <div class="logo-belt-track">
+          <!-- First set -->
+          <div class="logo-belt-item">
+            <div class="logo-belt-icon">⚛️</div>
+            <span class="logo-belt-name">Next.js</span>
+            <div class="logo-belt-popover">超高速SSRレンダリングフレームワーク</div>
           </div>
-        </div>
-
-        <div class="search-demo animate-on-scroll">
-          <div class="device-mockup">
-            <div class="chat-screen">
-              <div class="chat-header">
-                <div class="chat-avatar">🤖</div>
-                <div class="chat-title-wrapper">
-                  <div class="chat-title">Vibe AI アシスタント <span class="chat-status-dot"></span></div>
-                  <div class="chat-subtitle">リアルタイムデータ基盤 RAG回答</div>
-                </div>
-              </div>
-              <div class="chat-body" id="chatBody">
-                <div class="chat-bubble bot">
-                  こんにちは！Vibe AIアシスタントです。下の質問チップをクリックして、AI検索とリアルタイム回答プロセスをシミュレートしてみてください！
-                </div>
-              </div>
-              <div class="chat-input-area">
-                <div class="chip-container">
-                  <span class="quick-chip" onclick="simulateChat(this, '로몬의 다음 콘서트 일정이 언제야?')">🎤 コンサート日程は？</span>
-                  <span class="quick-chip" onclick="simulateChat(this, 'Vibe CMSの特徴は何ですか？')">✨ Vibe CMSの特徴は？</span>
-                  <span class="quick-chip" onclick="simulateChat(this, 'Vibe CMS 도입 문의는 어떻게 하나요?')">📞 導入・問い合わせ方法は？</span>
-                </div>
-                <div class="input-mock">
-                  <span id="inputPlaceholder">質問を選択してください...</span>
-                  <span class="send-mock-btn" style="cursor:pointer;">▲</span>
-                </div>
-              </div>
-            </div>
+          <div class="logo-belt-item">
+            <div class="logo-belt-icon">🏗️</div>
+            <span class="logo-belt-name">NestJS</span>
+            <div class="logo-belt-popover">大規模トラフィック対応バックエンドフレームワーク</div>
+          </div>
+          <div class="logo-belt-item">
+            <div class="logo-belt-icon">🗃️</div>
+            <span class="logo-belt-name">PostgreSQL</span>
+            <div class="logo-belt-popover">エンタープライズ級リレーショナルデータベース</div>
+          </div>
+          <div class="logo-belt-item">
+            <div class="logo-belt-icon">🧠</div>
+            <span class="logo-belt-name">Gemini AI</span>
+            <div class="logo-belt-popover">Google次世代超大規模AIエンジン</div>
+          </div>
+          <div class="logo-belt-item">
+            <div class="logo-belt-icon">🚀</div>
+            <span class="logo-belt-name">Vercel</span>
+            <div class="logo-belt-popover">グローバルCDNエッジデプロイプラットフォーム</div>
+          </div>
+          <div class="logo-belt-item">
+            <div class="logo-belt-icon">📊</div>
+            <span class="logo-belt-name">pgvector</span>
+            <div class="logo-belt-popover">ベクトル類似度検索データベース</div>
+          </div>
+          <div class="logo-belt-item">
+            <div class="logo-belt-icon">🔥</div>
+            <span class="logo-belt-name">Firebase</span>
+            <div class="logo-belt-popover">リアルタイムプッシュ通知＆認証</div>
+          </div>
+          <div class="logo-belt-item">
+            <div class="logo-belt-icon">☁️</div>
+            <span class="logo-belt-name">NCloud</span>
+            <div class="logo-belt-popover">公共機関級セキュリティクラウドインフラ</div>
+          </div>
+          <!-- Duplicate set for infinite scroll -->
+          <div class="logo-belt-item">
+            <div class="logo-belt-icon">⚛️</div>
+            <span class="logo-belt-name">Next.js</span>
+            <div class="logo-belt-popover">超高速SSRレンダリングフレームワーク</div>
+          </div>
+          <div class="logo-belt-item">
+            <div class="logo-belt-icon">🏗️</div>
+            <span class="logo-belt-name">NestJS</span>
+            <div class="logo-belt-popover">大規模トラフィック対応バックエンドフレームワーク</div>
+          </div>
+          <div class="logo-belt-item">
+            <div class="logo-belt-icon">🗃️</div>
+            <span class="logo-belt-name">PostgreSQL</span>
+            <div class="logo-belt-popover">エンタープライズ級リレーショナルデータベース</div>
+          </div>
+          <div class="logo-belt-item">
+            <div class="logo-belt-icon">🧠</div>
+            <span class="logo-belt-name">Gemini AI</span>
+            <div class="logo-belt-popover">Google次世代超大規模AIエンジン</div>
+          </div>
+          <div class="logo-belt-item">
+            <div class="logo-belt-icon">🚀</div>
+            <span class="logo-belt-name">Vercel</span>
+            <div class="logo-belt-popover">グローバルCDNエッジデプロイプラットフォーム</div>
+          </div>
+          <div class="logo-belt-item">
+            <div class="logo-belt-icon">📊</div>
+            <span class="logo-belt-name">pgvector</span>
+            <div class="logo-belt-popover">ベクトル類似度検索データベース</div>
+          </div>
+          <div class="logo-belt-item">
+            <div class="logo-belt-icon">🔥</div>
+            <span class="logo-belt-name">Firebase</span>
+            <div class="logo-belt-popover">リアルタイムプッシュ通知＆認証</div>
+          </div>
+          <div class="logo-belt-item">
+            <div class="logo-belt-icon">☁️</div>
+            <span class="logo-belt-name">NCloud</span>
+            <div class="logo-belt-popover">公共機関級セキュリティクラウドインフラ</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <script>
-    let isChatSimulating = false;
-    function simulateChat(chipElement, questionText) {
-      if (isChatSimulating) return;
-      isChatSimulating = true;
-
-      const chatBody = document.getElementById('chatBody');
-      const placeholder = document.getElementById('inputPlaceholder');
-      
-      // 1. input placeholder에 텍스트 채우기
-      placeholder.textContent = chipElement.textContent;
-      placeholder.style.color = '#fff';
-
-      // 2. 잠시 후 사용자 말풍선 추가
-      setTimeout(() => {
-        const userBubble = document.createElement('div');
-        userBubble.className = 'chat-bubble user';
-        userBubble.textContent = chipElement.textContent;
-        chatBody.appendChild(userBubble);
-        chatBody.scrollTop = chatBody.scrollHeight;
-        
-        // input placeholder 초기화
-        placeholder.textContent = '質問を選択してください...';
-        placeholder.style.color = 'var(--text-muted)';
-        
-        // 3. AI 타이핑 지시자(로딩) 추가
-        setTimeout(() => {
-          const typingIndicator = document.createElement('div');
-          typingIndicator.className = 'chat-bubble bot typing-indicator';
-          typingIndicator.id = 'typingIndicator';
-          typingIndicator.innerHTML = '<span></span><span></span><span></span>';
-          chatBody.appendChild(typingIndicator);
-          chatBody.scrollTop = chatBody.scrollHeight;
-
-          // 4. 답변 준비 및 로딩 제거 후 답변 타이핑 시작
-          setTimeout(() => {
-            const indicator = document.getElementById('typingIndicator');
-            if (indicator) indicator.remove();
-
-            let answerText = "";
-            let sourceText = "";
-            let linkUrl = "";
-
-            if (questionText.includes('콘서트')) {
-              answerText = "アーティスト ロモン(Lomon)の次のライブコンサートは、2026年7月18日にソウルオリンピックホールで開催される予定です。チケット予約日程やグローバルファンクラブ先行予約に関する詳細な案内は、公式ホームページのInformation掲示板のお知らせをご確認ください。";
-              sourceText = "Information: '2026 Lomon Live Concert 안내'";
-              linkUrl = "https://lomon.jksoft.io";
-            } else if (questionText.includes('Vibe CMS')) {
-              answerText = "Vibe CMSは、企業の迅速なビジネス成長を支援する高性能なWebコンテンツ管理エンジンです。Next.js 14および最新のWeb標準技術による超高速なページロード速度を誇り、マルチテナントごとの独立したテーマ制御やAIエージェントチャットボット連携など、エンタープライズレベルの拡張性を完全に保証します。";
-              sourceText = "Feature: 'Vibe CMS 製品仕様書'";
-              linkUrl = "#features";
-            } else {
-              answerText = "Vibe CMSの導入に関するお問い合わせは、上部ナビゲーションの [お問い合わせ] ボタンをクリックするか、jksoft.jeong@gmail.com 宛てに電子メールでお送りください。担当者がビジネス要件を分析し、24時間以内にカスタマイズされた提案書と見積書をお送りします。";
-              sourceText = "Service: 'Vibe CMS 비즈니스 제안서'";
-              linkUrl = "mailto:jksoft.jeong@gmail.com";
-            }
-
-            const botBubble = document.createElement('div');
-            botBubble.className = 'chat-bubble bot';
-            chatBody.appendChild(botBubble);
-
-            let charIndex = 0;
-            function typeChar() {
-              if (charIndex < answerText.length) {
-                botBubble.textContent += answerText.charAt(charIndex);
-                charIndex++;
-                chatBody.scrollTop = chatBody.scrollHeight;
-                setTimeout(typeChar, 15); // 15ms 타이핑 인터벌
-              } else {
-                // 타이핑 종료 후 출처 카드 추가
-                const sourceCard = document.createElement('a');
-                sourceCard.href = linkUrl;
-                sourceCard.target = '_blank';
-                sourceCard.className = 'chat-bubble bot-source';
-                sourceCard.innerHTML = '🔗 ソース: ' + sourceText;
-                chatBody.appendChild(sourceCard);
-                chatBody.scrollTop = chatBody.scrollHeight;
-                isChatSimulating = false;
-              }
-            }
-            typeChar();
-
-          }, 1200); // 1.2초 대기 후 답변 시작
-
-        }, 800); // 0.8초 후 타이핑 인디케이터 등장
-
-      }, 500); // 0.5초 대기
-    }
-  </script>
-
-  <!-- Latest Updates Section -->
+  <!-- Latest Updates — Timeline / Changelog -->
   <section id="updates">
     <div class="section-container">
-      <div class="updates-header animate-on-scroll">
+      <div class="animate-on-scroll" style="text-align:center; margin-bottom:48px;">
         <span class="section-label">Latest Updates</span>
-        <h2 class="section-title">最新のコア機能</h2>
-        <p class="section-desc">
-          Vibe CMSは、強力な安定性と先進的なユーザー体験のために毎月高度化されています。最近追加されたビジネスの核となるアップデートをご紹介します。
-        </p>
+        <h2 class="section-title">最近の主要アップデート</h2>
       </div>
-      <div class="updates-grid">
-
-        <!-- 統合会員登録 & セキュリティ強化 -->
-        <div class="update-card animate-on-scroll">
-          <div class="update-card-header">
-            <div class="update-icon">🔐</div>
-            <span class="update-badge">2026.06</span>
-          </div>
-          <h3>統合会員登録とアカウントセキュリティ</h3>
-          <p>簡単なソーシャルログイン連動と徹底したセキュリティ対策により、便利で信頼性の高いユーザー環境を保証します。</p>
-          <ul class="update-highlights">
-            <li>Google、Kakaoなど主要プラットフォームのソーシャルログイン(OAuth2)対応</li>
-            <li>毎回ログインする必要のない安全で便利な自動ログイン機能の導入</li>
-            <li>パスワード漏洩防止のためのセキュリティフィルターと異常アクセスの監視</li>
-          </ul>
-          <div class="update-tags">
-            <span class="update-tag">ソーシャルログイン</span>
-            <span class="update-tag">自動ログイン</span>
-            <span class="update-tag">アカウントセキュリティ</span>
-          </div>
-        </div>
-
-        <!-- マルチテーマ & レイアウト制御 -->
-        <div class="update-card animate-on-scroll">
-          <div class="update-card-header">
-            <div class="update-icon">🎨</div>
-            <span class="update-badge">2026.06</span>
-          </div>
-          <h3>マルチテーマおよびレイアウト制御</h3>
-          <p>ブランドアイデンティティに合わせた個別のテーマ設定と、最適化された動的レイアウトレイヤーのカスタマイズが可能です。</p>
-          <ul class="update-highlights">
-            <li>テナント個別のCSS変数に基づくカラーパレット＆フォントのリアルタイム適用</li>
-            <li>ヘッダー、フッター、フローティングボタンの表示/非表示およびレイアウト詳細管理</li>
-            <li>デスクトップ・タブレット・モバイルを網羅する完全レスポリブデザイン</li>
-          </ul>
-          <div class="update-tags">
-            <span class="update-tag">マルチテーマ</span>
-            <span class="update-tag">Layout制御</span>
-            <span class="update-tag">テナントUI</span>
-          </div>
-        </div>
-
-        <!-- AIエージェントモニタリング -->
-        <div class="update-card animate-on-scroll">
-          <div class="update-card-header">
-            <div class="update-icon">📊</div>
-            <span class="update-badge">2026.06</span>
-          </div>
-          <h3>AIエージェントトークン使用量分析</h3>
-          <p>AI連携機能のコスト管理と濫用制御のために、リアルタイムAPIトークン消費量を分析・統計化します。</p>
-          <ul class="update-highlights">
-            <li>Gemini APIコール毎の正確な入力/出力トークン（Token）ログ生成</li>
-            <li>テナント別、期間別のAI費用および使用量統計を照会できる管理者用APIの追加</li>
-            <li>短時間の過剰なリクエストからインフラを保護するレート制限フィルタリング</li>
-          </ul>
-          <div class="update-tags">
-            <span class="update-tag">AIコスト分析</span>
-            <span class="update-tag">トークンロギング</span>
-            <span class="update-tag">統計API</span>
-          </div>
-        </div>
-
-        <!-- ウェブプッシュ通知 -->
-        <div class="update-card animate-on-scroll">
-          <div class="update-card-header">
-            <div class="update-icon">🔔</div>
-            <span class="update-badge">2026.05</span>
-          </div>
-          <h3>リアルタイムWebプッシュ通知</h3>
-          <p>新規コンテンツの登録時、ユーザーのブラウザやモバイルにリアルタイムでプッシュ通知を即座に送信します。</p>
-          <ul class="update-highlights">
-            <li>モバイルアプリのショートカットインストール(PWA)自動検出およびバナー誘導</li>
-            <li>サイト内通知センターの提供およびリアルタイム未読バッジ表示</li>
-            <li>緊急度や重要なお知らせに応じたカスタマイズ配信ポリシー</li>
-          </ul>
-          <div class="update-tags">
-            <span class="update-tag">リアルタイム通知</span>
-            <span class="update-tag">モバイルWebアプリ(PWA)</span>
-            <span class="update-tag">プッシュ配信</span>
-          </div>
-        </div>
-
-        <!-- 多言語メニュー -->
-        <div class="update-card animate-on-scroll">
-          <div class="update-card-header">
-            <div class="update-icon">🌐</div>
-            <span class="update-badge">2026.05</span>
-          </div>
-          <h3>グローバル多言語管理システム</h3>
-          <p>グローバルブランディングのために韓国語、英語、日本語、中国語をネイティブ環境で完全サポートします。</p>
-          <ul class="update-highlights">
-            <li>多言語メニュー名管理エンジンを内蔵</li>
-            <li>🤖 翻訳が必要な際、クリック一回でAI多言語自動翻訳が完了</li>
-            <li>翻訳漏れがある場合、デフォルト設定言語へ自然に代替する安定性</li>
-          </ul>
-          <div class="update-tags">
-            <span class="update-tag">グローバル対応</span>
-            <span class="update-tag">4ヶ国語サポート</span>
-            <span class="update-tag">AI自動翻訳</span>
-          </div>
-        </div>
-
-        <!-- GA4 ダッシュボード -->
-        <div class="update-card animate-on-scroll">
-          <div class="update-card-header">
-            <div class="update-icon">📈</div>
-            <span class="update-badge">2026.04</span>
-          </div>
-          <h3>訪問者詳細統計ダッシュボード</h3>
-          <p>Googleアナリティクス(GA4)を完全連動し、管理ダッシュボード内でユーザーの流入分析を直感的に提供します。</p>
-          <ul class="update-highlights">
-            <li>国別・言語別の流入経路統計のビジュアル化</li>
-            <li>関心の最も高い人気投稿のリアルタイムランキング分析</li>
-            <li>平均滞在時間、再訪問率などコア行動データの提供</li>
-          </ul>
-          <div class="update-tags">
-            <span class="update-tag">アクセス分析</span>
-            <span class="update-tag">GA4連携</span>
-            <span class="update-tag">リアルタイム統計</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Tech Stack Section -->
-  <section id="tech">
-    <div class="section-container">
-      <div class="animate-on-scroll" style="text-align:center;">
-        <span class="section-label">Technology</span>
-        <h2 class="section-title">グローバル標準技術および最新アーキテクチャ</h2>
-        <p class="section-desc" style="margin-left:auto;margin-right:auto;">
-          グローバル企業が採用する最新トレンドの技術仕様と、安定したクラウドエンタープライズ環境を備え、365日無停止のサービスをお約束します。
-        </p>
-      </div>
-      <div class="tech-grid">
-        <div class="tech-card animate-on-scroll">
-          <span class="tech-emoji">⚛️</span>
-          <h4>最新フロントエンド標準 (Next.js)</h4>
-          <p>グローバル革新企業が標準として採用する最新のウェブ技術を使用し、初期ロード速度と検索エンジンの露出を極大化します。</p>
-        </div>
-        <div class="tech-card animate-on-scroll">
-          <span class="tech-emoji">🏗️</span>
-          <h4>高性能・大容量トラフィック設計</h4>
-          <p>数万人のユーザーが同時接続しても、遅延なく即座に反応する強固なサーバーインフラを実装しています。</p>
-        </div>
-        <div class="tech-card animate-on-scroll">
-          <span class="tech-emoji">🚀</span>
-          <h4>365日無停止リアルタイムアップデート</h4>
-          <p>システムメンテナンス画面を挟まず、新しい機能の追加や最適化を稼働したまま行い、常に快適な状態を維持します。</p>
-        </div>
-        <div class="tech-card animate-on-scroll">
-          <span class="tech-emoji">🗃️</span>
-          <h4>徹底したデータ保護と分離</h4>
-          <p>顧客企業間のデータを完全な障壁で分離し、いかなる場合でも個人情報の安全を徹底的に保護します。</p>
-        </div>
-        <div class="tech-card animate-on-scroll">
-          <span class="tech-emoji">🧠</span>
-          <h4>Google次世代AIエンジン連携</h4>
-          <p>Googleの最新の超巨大AIモデル(Gemini)を内蔵し、コンテンツ価値の自動分析や多言語翻訳を完全自動化します。</p>
-        </div>
-        <div class="tech-card animate-on-scroll">
-          <span class="tech-emoji">📦</span>
-          <h4>統合管理の最適化</h4>
-          <p>ホームページ画面と管理システムを一貫した構造で統合構築し、将来の管理コスト削減と優れた品質を保証します。</p>
-        </div>
-        <div class="tech-card animate-on-scroll">
-          <span class="tech-emoji">🔄</span>
-          <h4>リアルタイムデータ反応型エンジン</h4>
-          <p>ユーザーがアクションを実行した際、画面の遅延やリロードなしに滑らかに処理される最新の反応型ウェブ速度を提供します。</p>
-        </div>
-        <div class="tech-card animate-on-scroll">
-          <span class="tech-emoji">☁️</span>
-          <h4>エンタープライズセキュリティクラウド</h4>
-          <p>厳しい国家公的機関のセキュリティ規格を満たした大手クラウドインフラを採用し、24時間安全に稼働します。</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- AIO Section -->
-  <section id="aio">
-    <div class="section-container">
-      <div class="aio-content">
-        <div class="aio-text-area animate-on-scroll">
-          <span class="section-label">AI Optimization</span>
-          <h2 class="section-title">AIエージェント時代に<br>備える新たなマーケティング</h2>
-          <h3>CMSで記事を書くだけで、AIエージェントが最も好む形式で自動流通されます</h3>
-          <p>
-            ChatGPTやGeminiなどの生成AIが検索の中心となる中で、
-            ユーザーはWebサイトを訪問することなく求める答えを得ています。
-          </p>
-          <p>
-            Vibe CMSに内蔵された<strong>AIエージェント最適化(AIO)ソリューション</strong>は、メタデータの自動化とデータ加工を通じて、<strong>生成AIがお客様のブランドを「最も信頼できる情報源」として推奨</strong>するように保証します。
-          </p>
-          <ul>
-            <li>AIエージェントが完全に認識するデータ規格の自動生成</li>
-            <li>生成AI検索露出(GEO)のための最適化配置</li>
-            <li>ウェブクローラーロボットの精密な巡回を支援するAIフレンドリーなデータ流通</li>
-            <li>ユーザーがサイトを訪れる前のAI推奨段階での認知度の先占</li>
-          </ul>
-        </div>
-        <div class="aio-visual animate-on-scroll">
-          <div class="aio-flow-step">
-            <div class="aio-step-num">1</div>
-            <div class="aio-step-text">
-              <h4>コンテンツ作成</h4>
-              <p>管理者がCMSで一般テキストとして記事を作成します。</p>
-            </div>
-          </div>
-          <div class="aio-flow-step">
-            <div class="aio-step-num">2</div>
-            <div class="aio-step-text">
-              <h4>AI自動分析</h4>
-              <p>Gemini AIが本文を即座に解析し、コアキーワードとカテゴリを抽出します。</p>
-            </div>
-          </div>
-          <div class="aio-flow-step">
-            <div class="aio-step-num">3</div>
-            <div class="aio-step-text">
-              <h4>AIエージェント最適化形式の自動加工</h4>
-              <p>AIエンジンが完全にインデックス作成できる特化ファイルや構造化データを自動で加工・搭載します。</p>
-            </div>
-          </div>
-          <div class="aio-flow-step">
-            <div class="aio-step-num">4</div>
-            <div class="aio-step-text">
-              <h4>AIエージェント公式引用</h4>
-              <p>ChatGPT、Gemini、Perplexityなどが該当コンテンツを最も信頼できる公式回答ソースとして引用します。</p>
-            </div>
-          </div>
-        <!-- AIO 適用ガイドバナー -->
-        <div class="aio-lifecycle-box animate-on-scroll">
-          <div class="info-icon">💡</div>
-          <div class="aio-lifecycle-content">
-            <h4>AIO技術はいつ適用され、どのように検証しますか？</h4>
-            <p>
-              AIOメタデータ（llms.txtなど）がデプロイされると、AIクローラーボットが即座に認識します。<br>
-              通常<span class="highlight">1〜3日以内にインデックス作成</span>が完了し、その後、ChatGPTやPerplexity等で下記のようなプロンプトを入力し、<strong>直接最適化の可否を検証</strong>してみてください。
-            </p>
-            <div style="margin-top:12px; padding:12px 16px; background:rgba(0,0,0,0.2); border-radius:8px; border:1px dashed rgba(255,255,255,0.1); font-size:13.5px; color:var(--text-secondary); line-height:1.6;">
-              <strong style="color:var(--rose-light);">🤖 プロンプト例:</strong><br>
-              <span style="color:var(--text-primary);">"https://www.jksoft.io/ サイトのアイデンティティと主要技術スタックを教えて。"</span><br>
-              <span style="font-size:12.5px;">→ AIがVibeプラットフォームやJeong Hyoung Jae代表の経歴に基づいて回答すれば、完璧にインデックス作成されています。</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- AIO デモ UI -->
-        <div class="aio-demo-container animate-on-scroll">
-          <details class="aio-details">
-            <summary class="aio-summary">
-              <div class="aio-summary-content">
-                <span class="status-dot"></span>
-                <span>Vibe CMSに自動適用されるAIO(llms.txt) ソース構造を表示</span>
+      <div class="updates-timeline animate-on-scroll">
+        <!-- 2026.06 -->
+        <div class="timeline-month-group">
+          <div class="timeline-month-label">2026.06</div>
+          <div class="timeline-entry">
+            <div class="timeline-entry-header" onclick="this.parentElement.classList.toggle('open')">
+              <span class="timeline-entry-icon">🔐</span>
+              <div class="timeline-entry-info">
+                <div class="timeline-entry-title">統合会員登録とアカウントセキュリティ</div>
+                <div class="timeline-entry-summary">ソーシャルログイン連携、自動ログイン、異常アクセスモニタリング</div>
               </div>
-              <span class="toggle-icon">▼</span>
-            </summary>
-            <div class="aio-content-wrapper">
-              <div class="aio-code-header">
-                <span>llms.txt (AI Crawlers Friendly Format)</span>
-                <span>Type: Markdown</span>
-              </div>
-              <div class="aio-code-block">
-<span class="hl-h"># JkSoft</span>
-
-<span class="comment">> JkSoft is a next-generation technology company focused on multi-tenant SaaS platforms and AI Search Engine Optimization (AIO).</span>
-
-<span class="hl-h">## Core Identity</span>
-<span class="hl-list">-</span> <span class="hl-b">Organization:</span> JkSoft
-<span class="hl-list">-</span> <span class="hl-b">Core Product:</span> Vibe CMS (AI-Ready Multitenant CMS)
-<span class="hl-list">-</span> <span class="hl-b">Innovative Service:</span> AI Optimization (AIO)
-<span class="hl-list">-</span> <span class="hl-b">Representative:</span> Jeong Hyoung Jae (Tech Lead)
-
-<span class="hl-h">## Services and Solutions</span>
-<span class="hl-h">### 1. Vibe CMS (AI-Ready Multitenant CMS)</span>
-A scalable, modular SaaS platform architecture designed for business growth.
-
-<span class="hl-h">### 2. AIO (AI Optimization)</span>
-Strategic content structuring for Generative AI search visibility.
-<span class="hl-list">-</span> Schema.org structured data automation
-<span class="hl-list">-</span> AI search result citation strategy (ChatGPT, Gemini, Perplexity)
+              <span class="timeline-entry-arrow">▼</span>
+            </div>
+            <div class="timeline-entry-details">
+              <div class="timeline-detail-content">
+                <ul>
+                  <li>Google、Kakaoなど主要プラットフォームのソーシャル簡単ログイン(OAuth2)搭載</li>
+                  <li>毎回面倒なログインが不要な安全な自動ログイン機能の提供</li>
+                  <li>パスワード漏洩防止のためのセキュリティソリューション及び異常アクセスリアルタイムモニタリング</li>
+                </ul>
+                <div class="timeline-detail-tags">
+                  <span class="update-tag">ソーシャルログイン</span>
+                  <span class="update-tag">自動ログイン</span>
+                  <span class="update-tag">アカウントセキュリティ</span>
+                </div>
               </div>
             </div>
-          </details>
-        </div>        </div>
+          </div>
+          <div class="timeline-entry">
+            <div class="timeline-entry-header" onclick="this.parentElement.classList.toggle('open')">
+              <span class="timeline-entry-icon">🎨</span>
+              <div class="timeline-entry-info">
+                <div class="timeline-entry-title">マルチテーマおよびレイアウトカスタム</div>
+                <div class="timeline-entry-summary">テナント別独立テーマ、レスポンシブレイアウトエンジン</div>
+              </div>
+              <span class="timeline-entry-arrow">▼</span>
+            </div>
+            <div class="timeline-entry-details">
+              <div class="timeline-detail-content">
+                <ul>
+                  <li>テナント別独立CSS変数ベースのカラーパレット＆フォントリアルタイム適用</li>
+                  <li>ヘッダー、フッター、フローティングボタンの表示有無及び詳細レイアウト管理エンジン</li>
+                  <li>デスクトップ・タブレット・モバイルを網羅する完全レスポンシブテーマフレームワーク</li>
+                </ul>
+                <div class="timeline-detail-tags">
+                  <span class="update-tag">マルチテーマ</span>
+                  <span class="update-tag">Layout制御</span>
+                  <span class="update-tag">テナントUI</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-entry">
+            <div class="timeline-entry-header" onclick="this.parentElement.classList.toggle('open')">
+              <span class="timeline-entry-icon">📊</span>
+              <div class="timeline-entry-info">
+                <div class="timeline-entry-title">AIエージェントトークン計量分析</div>
+                <div class="timeline-entry-summary">リアルタイムAPIトークン使用量分析及びコスト制御</div>
+              </div>
+              <span class="timeline-entry-arrow">▼</span>
+            </div>
+            <div class="timeline-entry-details">
+              <div class="timeline-detail-content">
+                <ul>
+                  <li>Gemini APIコール毎の正確なトークン(Token)使用記録パイプライン</li>
+                  <li>テナント別、期間別AI費用及び使用量統計照会管理者API</li>
+                  <li>異常な大量コールを制御するためのインフラ防御線の確保</li>
+                </ul>
+                <div class="timeline-detail-tags">
+                  <span class="update-tag">AIコスト分析</span>
+                  <span class="update-tag">トークンロギング</span>
+                  <span class="update-tag">統計API</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 2026.05 -->
+        <div class="timeline-month-group">
+          <div class="timeline-month-label">2026.05</div>
+          <div class="timeline-entry">
+            <div class="timeline-entry-header" onclick="this.parentElement.classList.toggle('open')">
+              <span class="timeline-entry-icon">🔔</span>
+              <div class="timeline-entry-info">
+                <div class="timeline-entry-title">リアルタイムWebプッシュ通知</div>
+                <div class="timeline-entry-summary">PWAインストール誘導、通知センター、カスタム配信ポリシー</div>
+              </div>
+              <span class="timeline-entry-arrow">▼</span>
+            </div>
+            <div class="timeline-entry-details">
+              <div class="timeline-detail-content">
+                <ul>
+                  <li>モバイルアプリショートカットインストール(PWA)自動検知及びインストール誘導バナー</li>
+                  <li>サイト内通知受信センター及びリアルタイム未読バッジ表示</li>
+                  <li>緊急度及び重要な告知に応じたカスタム通知配信ポリシー</li>
+                </ul>
+                <div class="timeline-detail-tags">
+                  <span class="update-tag">リアルタイム通知</span>
+                  <span class="update-tag">モバイルWebアプリ(PWA)</span>
+                  <span class="update-tag">プッシュ配信</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-entry">
+            <div class="timeline-entry-header" onclick="this.parentElement.classList.toggle('open')">
+              <span class="timeline-entry-icon">🌐</span>
+              <div class="timeline-entry-info">
+                <div class="timeline-entry-title">グローバル多言語管理システム</div>
+                <div class="timeline-entry-summary">AI自動翻訳、4ヶ国語ネイティブサポート</div>
+              </div>
+              <span class="timeline-entry-arrow">▼</span>
+            </div>
+            <div class="timeline-entry-details">
+              <div class="timeline-detail-content">
+                <ul>
+                  <li>多言語メニュー名管理エンジン内蔵</li>
+                  <li>🤖 翻訳が必要な際、ワンクリックでAI多言語自動翻訳完了</li>
+                  <li>外国語翻訳漏れ時、デフォルト設定言語へ自然に代替</li>
+                </ul>
+                <div class="timeline-detail-tags">
+                  <span class="update-tag">グローバル対応</span>
+                  <span class="update-tag">4ヶ国語サポート</span>
+                  <span class="update-tag">AI自動翻訳</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 2026.04 -->
+        <div class="timeline-month-group">
+          <div class="timeline-month-label">2026.04</div>
+          <div class="timeline-entry">
+            <div class="timeline-entry-header" onclick="this.parentElement.classList.toggle('open')">
+              <span class="timeline-entry-icon">📈</span>
+              <div class="timeline-entry-info">
+                <div class="timeline-entry-title">訪問者詳細統計ダッシュボード</div>
+                <div class="timeline-entry-summary">GA4連携、国別流入分析、人気投稿ランキング</div>
+              </div>
+              <span class="timeline-entry-arrow">▼</span>
+            </div>
+            <div class="timeline-entry-details">
+              <div class="timeline-detail-content">
+                <ul>
+                  <li>国別及び言語別流入経路統計の可視化</li>
+                  <li>最も関心の高い人気投稿のリアルタイムランキング分析</li>
+                  <li>平均滞在時間、再訪問率など核心的行動情報の提供</li>
+                </ul>
+                <div class="timeline-detail-tags">
+                  <span class="update-tag">アクセス分析</span>
+                  <span class="update-tag">Googleアナリティクス連携</span>
+                  <span class="update-tag">リアルタイム統計</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -667,18 +770,20 @@ Strategic content structuring for Generative AI search visibility.
     <div class="footer-content">
       <div class="footer-brand">
         <a href="index.html" class="nav-logo" aria-label="JkSoft Home">
-          <div class="logo-icon"><img src="../assets/images/logo.png" alt="JkSoft"></div>
-          <span>JkSoft</span>
-        </a>
+      <div class="logo-icon"><img src="../assets/images/logo.png" alt="JkSoft"></div>
+      <span>JkSoft</span>
+    </a>
         <p>技術で繋ぎ、プラットフォームとして成長する。マルチテナント基盤の次世代AI-Ready Web CMSソリューション。</p>
       </div>
       <div class="footer-links">
         <h4>サービス</h4>
         <ul>
           <li><a href="#vibe">Vibe CMS</a></li>
-          <li><a href="#updates">Latest Updates</a></li>
+          <li><a href="#search">AI Search</a></li>
           <li><a href="#aio">AI Optimization</a></li>
-          <li><a href="#tech">Tech Stack</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#tech-belt">Tech Stack</a></li>
+          <li><a href="#updates">Updates</a></li>
         </ul>
       </div>
       <div class="footer-links">
@@ -714,7 +819,6 @@ Strategic content structuring for Generative AI search visibility.
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
-          // Stagger animation for sibling cards
           const siblings = entry.target.parentElement.querySelectorAll('.animate-on-scroll');
           const siblingIndex = Array.from(siblings).indexOf(entry.target);
           setTimeout(() => {
@@ -737,6 +841,63 @@ Strategic content structuring for Generative AI search visibility.
         }
       });
     });
+
+    // ===== Stepper Auto-Play & Click Logic =====
+    const steppers = {
+      search: { list: 'searchStepperList', visual: 'searchStepperVisual', timer: null, current: 0 },
+      aio: { list: 'aioStepperList', visual: 'aioStepperVisual', timer: null, current: 0 }
+    };
+
+    function setStep(stepperId, index) {
+      const s = steppers[stepperId];
+      const listEl = document.getElementById(s.list);
+      const visualEl = document.getElementById(s.visual);
+      const items = listEl.querySelectorAll('.stepper-item');
+      const panels = visualEl.querySelectorAll('.visual-panel');
+
+      // Clear previous timer
+      if (s.timer) clearTimeout(s.timer);
+
+      // Reset all progress bars animation
+      items.forEach(item => {
+        const bar = item.querySelector('.stepper-progress-bar');
+        bar.style.animation = 'none';
+        bar.offsetHeight; // force reflow
+        bar.style.animation = '';
+      });
+
+      // Update active states
+      items.forEach(it => it.classList.remove('active'));
+      panels.forEach(p => p.classList.remove('active'));
+
+      items[index].classList.add('active');
+      panels[index].classList.add('active');
+      s.current = index;
+
+      // Auto-advance after 5s
+      s.timer = setTimeout(() => {
+        const nextIndex = (index + 1) % items.length;
+        setStep(stepperId, nextIndex);
+      }, 5000);
+    }
+
+    // Initialize steppers when they come into view
+    function initStepperObserver(stepperId) {
+      const s = steppers[stepperId];
+      const section = document.getElementById(s.list).closest('section');
+      const stepperObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            setStep(stepperId, 0);
+            stepperObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+      stepperObserver.observe(section);
+    }
+
+    initStepperObserver('search');
+    initStepperObserver('aio');
   </script>
 
 </body>

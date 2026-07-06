@@ -84,7 +84,7 @@
       <li><a href="#updates">Updates</a></li>
       <li><a href="profile.html">Profile</a></li>
     </ul>
-    <div style="display: flex; gap: 20px; align-items: center;">
+    <div class="nav-right" style="display: flex; gap: 20px; align-items: center;">
       <div class="lang-switcher" aria-label="Language / 言語" style="display: flex; gap: 8px; font-size: 14px; font-weight: 600;">
         <a href="../index.html" style="color: var(--text-secondary); transition: color 0.3s;" onmouseover="this.style.color='var(--text-primary)'" onmouseout="this.style.color='var(--text-secondary)'" aria-label="Korean">KO</a>
         <span style="color: var(--border-glass);">|</span>
@@ -92,7 +92,34 @@
       </div>
       <a href="mailto:jksoft.jeong@gmail.com"><button class="nav-cta">お問い合わせ</button></a>
     </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobileMenuOverlay">
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+    </button>
   </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
+  <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+    <div class="mobile-menu-content">
+      <ul class="mobile-nav-links">
+        <li><a href="#vibe" onclick="closeMobileMenu()">Vibe CMS</a></li>
+        <li><a href="#search" onclick="closeMobileMenu()">AI Search</a></li>
+        <li><a href="#aio" onclick="closeMobileMenu()">AI Optimization</a></li>
+        <li><a href="#about" onclick="closeMobileMenu()">About</a></li>
+        <li><a href="#tech-belt" onclick="closeMobileMenu()">Tech</a></li>
+        <li><a href="#updates" onclick="closeMobileMenu()">Updates</a></li>
+        <li><a href="profile.html">Profile</a></li>
+      </ul>
+      <div style="display: flex; gap: 12px; font-size: 16px; font-weight: 600; margin-bottom: 24px; justify-content: center;">
+        <a href="../index.html" style="color: var(--text-secondary);">KO</a>
+        <span style="color: var(--border-glass);">|</span>
+        <a href="index.html" style="color: var(--text-primary);">JP</a>
+      </div>
+      <a href="mailto:jksoft.jeong@gmail.com" class="mobile-cta" onclick="closeMobileMenu()">お問い合わせ</a>
+    </div>
+  </div>
 
   <!-- Hero Section -->
   <section class="hero">
@@ -114,6 +141,7 @@
       </p>
       <div class="hero-buttons">
         <a href="#vibe"><button class="btn-primary">Vibe CMSの詳細を見る →</button></a>
+        <a href="mailto:jksoft.jeong@gmail.com"><button class="btn-secondary">導入のお問い合わせ</button></a>
       </div>
     </div>
   </section>
@@ -131,48 +159,11 @@
         </p>
       </div>
 
-      <!-- Feature A: Multi-site -->
-      <div class="feature-block animate-on-scroll">
-        <div class="feature-block-text">
-          <h3>一つの管理画面、<br>無限のサイト</h3>
-          <p>各サイトは独立ドメイン・独立データで安全に運用されます。一つの統合管理者画面からすべてのサイトを制御できます。</p>
-        </div>
-        <div class="feature-block-visual">
-          <div class="visual-multi-site">
-            <div class="mini-browser">
-              <div class="mini-browser-bar"><span class="mini-browser-dot"></span><span class="mini-browser-dot"></span><span class="mini-browser-dot"></span></div>
-              <div class="mini-browser-body">
-                <div class="line" style="width:80%; background:var(--indigo);"></div>
-                <div class="line" style="width:60%; background:var(--rose);"></div>
-                <div class="line" style="width:90%; background:rgba(255,255,255,0.15);"></div>
-                <div class="line" style="width:40%; background:rgba(255,255,255,0.1);"></div>
-              </div>
-            </div>
-            <div class="mini-browser">
-              <div class="mini-browser-bar"><span class="mini-browser-dot"></span><span class="mini-browser-dot"></span><span class="mini-browser-dot"></span></div>
-              <div class="mini-browser-body">
-                <div class="line" style="width:70%; background:#a855f7;"></div>
-                <div class="line" style="width:50%; background:var(--indigo);"></div>
-                <div class="line" style="width:85%; background:rgba(255,255,255,0.15);"></div>
-                <div class="line" style="width:35%; background:rgba(255,255,255,0.1);"></div>
-              </div>
-            </div>
-            <div class="mini-browser">
-              <div class="mini-browser-bar"><span class="mini-browser-dot"></span><span class="mini-browser-dot"></span><span class="mini-browser-dot"></span></div>
-              <div class="mini-browser-body">
-                <div class="line" style="width:65%; background:var(--rose);"></div>
-                <div class="line" style="width:45%; background:#34d399;"></div>
-                <div class="line" style="width:75%; background:rgba(255,255,255,0.15);"></div>
-                <div class="line" style="width:55%; background:rgba(255,255,255,0.1);"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
 
       <!-- Feature B: AI-Ready Data -->
       <div class="feature-block reverse animate-on-scroll">
         <div class="feature-block-text">
+          <span class="value-tag">記事を書くだけでAIが自動宣伝</span>
           <h3>記事を書けば、<br>AIが読めるデータに変換</h3>
           <p>Geminiが即座に本文を解析してAI-Ready Dataに自動加工します。ChatGPT、GeminiなどのAIエージェントが最も好む形式で配信されます。</p>
         </div>
@@ -192,60 +183,7 @@
         </div>
       </div>
 
-      <!-- Feature C: Multilingual -->
-      <div class="feature-block animate-on-scroll">
-        <div class="feature-block-text">
-          <h3>ワンクリックで<br>4ヶ国語完成</h3>
-          <p>韓・英・日・中 ワンクリックAI翻訳。検索エンジンとAIクローラー最適化パスを自動設計します。</p>
-        </div>
-        <div class="feature-block-visual">
-          <div class="visual-language">
-            <div class="lang-toggle-bar">
-              <span class="lang-toggle-btn active">한국어</span>
-              <span class="lang-toggle-btn">English</span>
-              <span class="lang-toggle-btn">日本語</span>
-              <span class="lang-toggle-btn">中文</span>
-            </div>
-            <div class="lang-card">
-              🌐 AIが自動翻訳した多言語コンテンツが<br>各言語パス(/ko, /en, /ja, /zh)に即座に配信されます。
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <!-- Feature D: Dashboard & Security -->
-      <div class="feature-block reverse animate-on-scroll">
-        <div class="feature-block-text">
-          <h3>すべてのデータを一目で、<br>鉄壁セキュリティ</h3>
-          <p>会員・投稿・問い合わせ統合モニタリング。JWT + RBAC + 完全なテナントデータ分離でエンタープライズ級セキュリティを保証します。</p>
-        </div>
-        <div class="feature-block-visual">
-          <div class="visual-dashboard">
-            <div class="dash-card">
-              <div class="dash-card-value">1,284</div>
-              <div class="dash-card-label">総会員数</div>
-            </div>
-            <div class="dash-card">
-              <div class="dash-card-value">356</div>
-              <div class="dash-card-label">総投稿数</div>
-            </div>
-            <div class="dash-bar-chart">
-              <div class="dash-bar" style="height:40%; background:var(--indigo);"></div>
-              <div class="dash-bar" style="height:65%; background:#a855f7;"></div>
-              <div class="dash-bar" style="height:50%; background:var(--rose);"></div>
-              <div class="dash-bar" style="height:80%; background:var(--indigo);"></div>
-              <div class="dash-bar" style="height:55%; background:#a855f7;"></div>
-              <div class="dash-bar" style="height:70%; background:var(--rose);"></div>
-              <div class="dash-bar" style="height:45%; background:var(--indigo);"></div>
-            </div>
-            <div class="security-badges">
-              <span class="security-badge">✓ JWT認証</span>
-              <span class="security-badge">✓ RBAC権限</span>
-              <span class="security-badge">✓ データ分離</span>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -329,6 +267,26 @@
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Chat Demo -->
+      <div class="chat-demo-section animate-on-scroll">
+        <h3>💬 実際に体験してみてください</h3>
+        <p>質問をクリックすると、AIがリアルタイムで回答する様子を確認できます。</p>
+        <div class="chat-mockup" id="chatMockup">
+          <div class="chat-mockup-header">
+            <span class="chat-status-dot"></span>
+            Vibe AI Search
+          </div>
+          <div class="chat-body" id="chatBody">
+            <div class="chat-bubble bot">こんにちは！下の質問を選んでください。🤖</div>
+          </div>
+          <div class="quick-chips" id="quickChips">
+            <button class="quick-chip" onclick="simulateChat(0)">🎤 Vibe CMSの主な機能は？</button>
+            <button class="quick-chip" onclick="simulateChat(1)">⚡ AI検索の仕組みは？</button>
+            <button class="quick-chip" onclick="simulateChat(2)">📞 導入のお問い合わせ方法は？</button>
           </div>
         </div>
       </div>
@@ -455,6 +413,53 @@
     </div>
   </section>
 
+
+  <!-- Feature A: Multi-site -->
+  <section class="feature-standalone">
+    <div class="section-container">
+      <div class="feature-block animate-on-scroll">
+        <div class="feature-block-text">
+          <span class="value-tag">サイトが増えても管理は一つ</span>
+          <h3>一つの管理画面、<br>無限のサイト</h3>
+          <p>各サイトは独立ドメイン・独立データで安全に運用されます。一つの統合管理者画面からすべてのサイトを制御できます。</p>
+        </div>
+        <div class="feature-block-visual">
+          <div class="visual-multi-site">
+            <div class="mini-browser">
+              <div class="mini-browser-bar"><span class="mini-browser-dot"></span><span class="mini-browser-dot"></span><span class="mini-browser-dot"></span></div>
+              <div class="mini-browser-body">
+                <div class="line" style="width:80%; background:var(--indigo);"></div>
+                <div class="line" style="width:60%; background:var(--rose);"></div>
+                <div class="line" style="width:90%; background:rgba(255,255,255,0.15);"></div>
+                <div class="line" style="width:40%; background:rgba(255,255,255,0.1);"></div>
+              </div>
+            </div>
+            <div class="mini-browser">
+              <div class="mini-browser-bar"><span class="mini-browser-dot"></span><span class="mini-browser-dot"></span><span class="mini-browser-dot"></span></div>
+              <div class="mini-browser-body">
+                <div class="line" style="width:70%; background:#a855f7;"></div>
+                <div class="line" style="width:50%; background:var(--indigo);"></div>
+                <div class="line" style="width:85%; background:rgba(255,255,255,0.15);"></div>
+                <div class="line" style="width:35%; background:rgba(255,255,255,0.1);"></div>
+              </div>
+            </div>
+            <div class="mini-browser">
+              <div class="mini-browser-bar"><span class="mini-browser-dot"></span><span class="mini-browser-dot"></span><span class="mini-browser-dot"></span></div>
+              <div class="mini-browser-body">
+                <div class="line" style="width:65%; background:var(--rose);"></div>
+                <div class="line" style="width:45%; background:#34d399;"></div>
+                <div class="line" style="width:75%; background:rgba(255,255,255,0.15);"></div>
+                <div class="line" style="width:55%; background:rgba(255,255,255,0.1);"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
   <!-- About JkSoft Section -->
   <section id="about">
     <div class="section-container">
@@ -491,16 +496,29 @@
           </div>
         </div>
       </div>
+      <!-- Multilingual Highlight -->
+      <div class="about-lang-highlight animate-on-scroll" style="margin-top:40px; text-align:center;">
+        <span class="value-tag">海外のお客様も見逃しません</span>
+        <p style="color:var(--text-secondary); font-size:15px; margin-top:12px;">韓・英・日・中 ワンクリックAI翻訳でグローバルのお客様に届けます。</p>
+        <div style="display:flex; justify-content:center; gap:12px; margin-top:16px; flex-wrap:wrap;">
+          <span class="lang-toggle-btn active" style="padding:6px 16px; border-radius:8px; font-size:14px;">한국어</span>
+          <span class="lang-toggle-btn" style="padding:6px 16px; border-radius:8px; font-size:14px;">English</span>
+          <span class="lang-toggle-btn" style="padding:6px 16px; border-radius:8px; font-size:14px;">日本語</span>
+          <span class="lang-toggle-btn" style="padding:6px 16px; border-radius:8px; font-size:14px;">中文</span>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Tech Stack — Logo Belt -->
-  <section id="tech-belt">
+  <section id="tech-belt" class="collapsible-section">
     <div class="section-container">
-      <div class="animate-on-scroll">
+      <div class="animate-on-scroll collapsible-header" onclick="this.parentElement.parentElement.classList.toggle('expanded')">
         <span class="section-label">Technology</span>
         <h2 class="section-title">グローバル標準技術アーキテクチャ</h2>
+        <span class="collapsible-arrow">▼</span>
       </div>
+      <div class="collapsible-body">
       <div class="logo-belt-wrapper">
         <div class="logo-belt-track">
           <!-- First set -->
@@ -588,15 +606,18 @@
         </div>
       </div>
     </div>
+    </div>
   </section>
 
   <!-- Latest Updates — Timeline / Changelog -->
-  <section id="updates">
+  <section id="updates" class="collapsible-section">
     <div class="section-container">
-      <div class="animate-on-scroll" style="text-align:center; margin-bottom:48px;">
+      <div class="animate-on-scroll collapsible-header" style="text-align:center; margin-bottom:0;" onclick="this.parentElement.parentElement.classList.toggle('expanded')">
         <span class="section-label">Latest Updates</span>
         <h2 class="section-title">最近の主要アップデート</h2>
+        <span class="collapsible-arrow">▼</span>
       </div>
+      <div class="collapsible-body" style="padding-top:48px;">
       <div class="updates-timeline animate-on-scroll">
         <!-- 2026.06 -->
         <div class="timeline-month-group">
@@ -756,6 +777,7 @@
         </div>
       </div>
     </div>
+    </div>
   </section>
 
   <!-- Footer -->
@@ -891,6 +913,99 @@
 
     initStepperObserver('search');
     initStepperObserver('aio');
+
+    // ===== Mobile Menu Toggle =====
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileOverlay = document.getElementById('mobileMenuOverlay');
+    const mobileBackdrop = document.getElementById('mobileMenuBackdrop');
+
+    function openMobileMenu() {
+      mobileOverlay.classList.add('open');
+      mobileBackdrop.classList.add('open');
+      menuToggle.classList.add('active');
+      menuToggle.setAttribute('aria-expanded', 'true');
+      document.body.classList.add('no-scroll');
+    }
+    function closeMobileMenu() {
+      mobileOverlay.classList.remove('open');
+      mobileBackdrop.classList.remove('open');
+      menuToggle.classList.remove('active');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('no-scroll');
+    }
+    menuToggle.addEventListener('click', () => {
+      mobileOverlay.classList.contains('open') ? closeMobileMenu() : openMobileMenu();
+    });
+    mobileBackdrop.addEventListener('click', closeMobileMenu);
+
+    // ===== Interactive Chat Demo =====
+    const chatResponses = [
+      {
+        question: '🎤 Vibe CMSの主な機能は？',
+        answer: 'Vibe CMSの核心機能は<strong>AIインテリジェント検索(RAG)</strong>、<strong>AIO自動加工</strong>、<strong>4ヶ国語ワンクリック翻訳</strong>、<strong>マルチサイト管理</strong>などです。記事を作成するだけでAIが自動最適化し、ChatGPT・Geminiの公式回答ソースとして引用されます。',
+        source: '🔗 出典: jksoft.io — Vibe CMS 主要機能'
+      },
+      {
+        question: '⚡ AI検索の仕組みは？',
+        answer: 'サイト内のすべての投稿を<strong>ベクトル(Vector)</strong>に変換してデータベースに保存します。訪問者が自然言語で質問すると、<strong>pgvector</strong>がミリ秒単位で類似投稿を検索し、<strong>Gemini AI</strong>がRAGベースの正確な回答と出典をリアルタイムで生成します。',
+        source: '🔗 出典: jksoft.io — AI Intelligent Search'
+      },
+      {
+        question: '📞 導入のお問い合わせ方法は？',
+        answer: 'メールまたはお電話でお気軽にご連絡ください！<br><strong>📧 jksoft.jeong@gmail.com</strong><br><strong>📞 010-2998-0603</strong><br>20年以上のエンタープライズ経験を基に最適なソリューションをご提案します。',
+        source: ''
+      }
+    ];
+
+    let chatBusy = false;
+
+    function simulateChat(index) {
+      if (chatBusy) return;
+      chatBusy = true;
+
+      if (steppers.search.timer) {
+        clearTimeout(steppers.search.timer);
+        steppers.search.timer = null;
+      }
+
+      const chatBody = document.getElementById('chatBody');
+      const chips = document.querySelectorAll('.quick-chip');
+      const response = chatResponses[index];
+
+      chips.forEach(c => c.disabled = true);
+
+      const userBubble = document.createElement('div');
+      userBubble.className = 'chat-bubble user';
+      userBubble.textContent = response.question;
+      chatBody.appendChild(userBubble);
+      chatBody.scrollTop = chatBody.scrollHeight;
+
+      const typingEl = document.createElement('div');
+      typingEl.className = 'chat-typing';
+      typingEl.innerHTML = '<span></span><span></span><span></span>';
+      chatBody.appendChild(typingEl);
+      chatBody.scrollTop = chatBody.scrollHeight;
+
+      setTimeout(() => {
+        typingEl.remove();
+        const botBubble = document.createElement('div');
+        botBubble.className = 'chat-bubble bot';
+        botBubble.innerHTML = response.answer;
+        if (response.source) {
+          botBubble.innerHTML += '<span class="chat-source">' + response.source + '</span>';
+        }
+        chatBody.appendChild(botBubble);
+        chatBody.scrollTop = chatBody.scrollHeight;
+
+        chatBusy = false;
+        chips.forEach(c => c.disabled = false);
+
+        steppers.search.timer = setTimeout(() => {
+          const nextIdx = (steppers.search.current + 1) % document.querySelectorAll('#searchStepperList .stepper-item').length;
+          setStep('search', nextIdx);
+        }, 10000);
+      }, 1500);
+    }
   </script>
 
 </body>

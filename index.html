@@ -84,7 +84,7 @@
       <li><a href="#updates">Updates</a></li>
       <li><a href="profile.html">Profile</a></li>
     </ul>
-    <div style="display: flex; gap: 20px; align-items: center;">
+    <div class="nav-right" style="display: flex; gap: 20px; align-items: center;">
       <div class="lang-switcher" aria-label="Language / 言語" style="display: flex; gap: 8px; font-size: 14px; font-weight: 600;">
         <a href="index.html" style="color: var(--text-primary);" aria-label="Korean">KO</a>
         <span style="color: var(--border-glass);">|</span>
@@ -92,7 +92,34 @@
       </div>
       <a href="mailto:jksoft.jeong@gmail.com"><button class="nav-cta">문의하기</button></a>
     </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mobileMenuOverlay">
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+    </button>
   </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
+  <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+    <div class="mobile-menu-content">
+      <ul class="mobile-nav-links">
+        <li><a href="#vibe" onclick="closeMobileMenu()">Vibe CMS</a></li>
+        <li><a href="#search" onclick="closeMobileMenu()">AI Search</a></li>
+        <li><a href="#aio" onclick="closeMobileMenu()">AI Optimization</a></li>
+        <li><a href="#about" onclick="closeMobileMenu()">About</a></li>
+        <li><a href="#tech-belt" onclick="closeMobileMenu()">Tech</a></li>
+        <li><a href="#updates" onclick="closeMobileMenu()">Updates</a></li>
+        <li><a href="profile.html">Profile</a></li>
+      </ul>
+      <div style="display: flex; gap: 12px; font-size: 16px; font-weight: 600; margin-bottom: 24px; justify-content: center;">
+        <a href="index.html" style="color: var(--text-primary);">KO</a>
+        <span style="color: var(--border-glass);">|</span>
+        <a href="ja/index.html" style="color: var(--text-secondary);">JP</a>
+      </div>
+      <a href="mailto:jksoft.jeong@gmail.com" class="mobile-cta" onclick="closeMobileMenu()">문의하기</a>
+    </div>
+  </div>
 
   <!-- Hero Section -->
   <section class="hero">
@@ -114,6 +141,7 @@
       </p>
       <div class="hero-buttons">
         <a href="#vibe"><button class="btn-primary">Vibe CMS 알아보기 →</button></a>
+        <a href="mailto:jksoft.jeong@gmail.com"><button class="btn-secondary">도입 문의하기</button></a>
       </div>
     </div>
   </section>
@@ -131,48 +159,11 @@
         </p>
       </div>
 
-      <!-- Feature A: Multi-site -->
-      <div class="feature-block animate-on-scroll">
-        <div class="feature-block-text">
-          <h3>하나의 어드민,<br>무한한 사이트</h3>
-          <p>각 사이트는 독립 도메인·독립 데이터로 안전하게 운영됩니다. 하나의 통합 관리자 화면에서 모든 사이트를 제어하세요.</p>
-        </div>
-        <div class="feature-block-visual">
-          <div class="visual-multi-site">
-            <div class="mini-browser">
-              <div class="mini-browser-bar"><span class="mini-browser-dot"></span><span class="mini-browser-dot"></span><span class="mini-browser-dot"></span></div>
-              <div class="mini-browser-body">
-                <div class="line" style="width:80%; background:var(--indigo);"></div>
-                <div class="line" style="width:60%; background:var(--rose);"></div>
-                <div class="line" style="width:90%; background:rgba(255,255,255,0.15);"></div>
-                <div class="line" style="width:40%; background:rgba(255,255,255,0.1);"></div>
-              </div>
-            </div>
-            <div class="mini-browser">
-              <div class="mini-browser-bar"><span class="mini-browser-dot"></span><span class="mini-browser-dot"></span><span class="mini-browser-dot"></span></div>
-              <div class="mini-browser-body">
-                <div class="line" style="width:70%; background:#a855f7;"></div>
-                <div class="line" style="width:50%; background:var(--indigo);"></div>
-                <div class="line" style="width:85%; background:rgba(255,255,255,0.15);"></div>
-                <div class="line" style="width:35%; background:rgba(255,255,255,0.1);"></div>
-              </div>
-            </div>
-            <div class="mini-browser">
-              <div class="mini-browser-bar"><span class="mini-browser-dot"></span><span class="mini-browser-dot"></span><span class="mini-browser-dot"></span></div>
-              <div class="mini-browser-body">
-                <div class="line" style="width:65%; background:var(--rose);"></div>
-                <div class="line" style="width:45%; background:#34d399;"></div>
-                <div class="line" style="width:75%; background:rgba(255,255,255,0.15);"></div>
-                <div class="line" style="width:55%; background:rgba(255,255,255,0.1);"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
 
       <!-- Feature B: AI-Ready Data -->
       <div class="feature-block reverse animate-on-scroll">
         <div class="feature-block-text">
+          <span class="value-tag">글만 쓰면 AI가 알아서 홍보합니다</span>
           <h3>글을 쓰면,<br>AI가 읽는 데이터로 변환</h3>
           <p>Gemini가 즉시 본문을 해석하여 AI-Ready Data로 자동 가공합니다. ChatGPT, Gemini 등 AI 에이전트가 가장 좋아하는 형태로 배포됩니다.</p>
         </div>
@@ -192,60 +183,8 @@
         </div>
       </div>
 
-      <!-- Feature C: Multilingual -->
-      <div class="feature-block animate-on-scroll">
-        <div class="feature-block-text">
-          <h3>클릭 한 번,<br>4개국어 완성</h3>
-          <p>한·영·일·중 원클릭 AI 번역. 검색엔진과 AI 크롤러 최적화 경로를 자동 설계합니다.</p>
-        </div>
-        <div class="feature-block-visual">
-          <div class="visual-language">
-            <div class="lang-toggle-bar">
-              <span class="lang-toggle-btn active">한국어</span>
-              <span class="lang-toggle-btn">English</span>
-              <span class="lang-toggle-btn">日本語</span>
-              <span class="lang-toggle-btn">中文</span>
-            </div>
-            <div class="lang-card">
-              🌐 AI가 자동으로 번역한 다국어 콘텐츠가<br>각 언어 경로(/ko, /en, /ja, /zh)에 즉시 배포됩니다.
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <!-- Feature D: Dashboard & Security -->
-      <div class="feature-block reverse animate-on-scroll">
-        <div class="feature-block-text">
-          <h3>한눈에 보는 모든 데이터,<br>철벽 보안</h3>
-          <p>회원·게시물·문의 통합 모니터링. JWT + RBAC + 완전한 테넌트 데이터 격리로 기업급 보안을 보장합니다.</p>
-        </div>
-        <div class="feature-block-visual">
-          <div class="visual-dashboard">
-            <div class="dash-card">
-              <div class="dash-card-value">1,284</div>
-              <div class="dash-card-label">총 회원수</div>
-            </div>
-            <div class="dash-card">
-              <div class="dash-card-value">356</div>
-              <div class="dash-card-label">총 게시물</div>
-            </div>
-            <div class="dash-bar-chart">
-              <div class="dash-bar" style="height:40%; background:var(--indigo);"></div>
-              <div class="dash-bar" style="height:65%; background:#a855f7;"></div>
-              <div class="dash-bar" style="height:50%; background:var(--rose);"></div>
-              <div class="dash-bar" style="height:80%; background:var(--indigo);"></div>
-              <div class="dash-bar" style="height:55%; background:#a855f7;"></div>
-              <div class="dash-bar" style="height:70%; background:var(--rose);"></div>
-              <div class="dash-bar" style="height:45%; background:var(--indigo);"></div>
-            </div>
-            <div class="security-badges">
-              <span class="security-badge">✓ JWT 인증</span>
-              <span class="security-badge">✓ RBAC 권한</span>
-              <span class="security-badge">✓ 데이터 격리</span>
-            </div>
-          </div>
-        </div>
-      </div>
+
     </div>
   </section>
 
@@ -329,6 +268,26 @@
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Chat Demo -->
+      <div class="chat-demo-section animate-on-scroll">
+        <h3>💬 직접 체험해 보세요</h3>
+        <p>질문을 클릭하면 AI가 실시간으로 답변하는 모습을 확인할 수 있습니다.</p>
+        <div class="chat-mockup" id="chatMockup">
+          <div class="chat-mockup-header">
+            <span class="chat-status-dot"></span>
+            Vibe AI Search
+          </div>
+          <div class="chat-body" id="chatBody">
+            <div class="chat-bubble bot">안녕하세요! 궁금한 점을 아래에서 선택해 주세요. 🤖</div>
+          </div>
+          <div class="quick-chips" id="quickChips">
+            <button class="quick-chip" onclick="simulateChat(0)">🎤 Vibe CMS의 주요 기능이 뭐야?</button>
+            <button class="quick-chip" onclick="simulateChat(1)">⚡ AI 검색은 어떻게 작동해?</button>
+            <button class="quick-chip" onclick="simulateChat(2)">📞 도입 문의 방법은?</button>
           </div>
         </div>
       </div>
@@ -455,6 +414,51 @@
     </div>
   </section>
 
+
+  <!-- Feature: Multi-site -->
+  <section class="feature-standalone">
+    <div class="section-container">
+      <div class="feature-block animate-on-scroll">
+        <div class="feature-block-text">
+          <span class="value-tag">사이트가 늘어도 관리는 하나</span>
+          <h3>하나의 어드민,<br>무한한 사이트</h3>
+          <p>각 사이트는 독립 도메인·독립 데이터로 안전하게 운영됩니다. 하나의 통합 관리자 화면에서 모든 사이트를 제어하세요.</p>
+        </div>
+        <div class="feature-block-visual">
+          <div class="visual-multi-site">
+            <div class="mini-browser">
+              <div class="mini-browser-bar"><span class="mini-browser-dot"></span><span class="mini-browser-dot"></span><span class="mini-browser-dot"></span></div>
+              <div class="mini-browser-body">
+                <div class="line" style="width:80%; background:var(--indigo);"></div>
+                <div class="line" style="width:60%; background:var(--rose);"></div>
+                <div class="line" style="width:90%; background:rgba(255,255,255,0.15);"></div>
+                <div class="line" style="width:40%; background:rgba(255,255,255,0.1);"></div>
+              </div>
+            </div>
+            <div class="mini-browser">
+              <div class="mini-browser-bar"><span class="mini-browser-dot"></span><span class="mini-browser-dot"></span><span class="mini-browser-dot"></span></div>
+              <div class="mini-browser-body">
+                <div class="line" style="width:70%; background:#a855f7;"></div>
+                <div class="line" style="width:50%; background:var(--indigo);"></div>
+                <div class="line" style="width:85%; background:rgba(255,255,255,0.15);"></div>
+                <div class="line" style="width:35%; background:rgba(255,255,255,0.1);"></div>
+              </div>
+            </div>
+            <div class="mini-browser">
+              <div class="mini-browser-bar"><span class="mini-browser-dot"></span><span class="mini-browser-dot"></span><span class="mini-browser-dot"></span></div>
+              <div class="mini-browser-body">
+                <div class="line" style="width:65%; background:var(--rose);"></div>
+                <div class="line" style="width:45%; background:#34d399;"></div>
+                <div class="line" style="width:75%; background:rgba(255,255,255,0.15);"></div>
+                <div class="line" style="width:55%; background:rgba(255,255,255,0.1);"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- About JkSoft Section -->
   <section id="about">
     <div class="section-container">
@@ -491,16 +495,29 @@
           </div>
         </div>
       </div>
+      <!-- Multilingual Highlight -->
+      <div class="about-lang-highlight animate-on-scroll" style="margin-top:40px; text-align:center;">
+        <span class="value-tag">해외 고객도 놓치지 마세요</span>
+        <p style="color:var(--text-secondary); font-size:15px; margin-top:12px;">한·영·일·중 원클릭 AI 번역으로 글로벌 고객에게 도달합니다.</p>
+        <div style="display:flex; justify-content:center; gap:12px; margin-top:16px; flex-wrap:wrap;">
+          <span class="lang-toggle-btn active" style="padding:6px 16px; border-radius:8px; font-size:14px;">한국어</span>
+          <span class="lang-toggle-btn" style="padding:6px 16px; border-radius:8px; font-size:14px;">English</span>
+          <span class="lang-toggle-btn" style="padding:6px 16px; border-radius:8px; font-size:14px;">日本語</span>
+          <span class="lang-toggle-btn" style="padding:6px 16px; border-radius:8px; font-size:14px;">中文</span>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Tech Stack — Logo Belt -->
-  <section id="tech-belt">
+  <section id="tech-belt" class="collapsible-section">
     <div class="section-container">
-      <div class="animate-on-scroll">
+      <div class="animate-on-scroll collapsible-header" onclick="this.parentElement.parentElement.classList.toggle('expanded')">
         <span class="section-label">Technology</span>
         <h2 class="section-title">글로벌 표준 기술 아키텍처</h2>
+        <span class="collapsible-arrow">▼</span>
       </div>
+      <div class="collapsible-body">
       <div class="logo-belt-wrapper">
         <div class="logo-belt-track">
           <!-- First set -->
@@ -588,15 +605,19 @@
         </div>
       </div>
     </div>
+      </div>
+    </div>
   </section>
 
   <!-- Latest Updates — Timeline / Changelog -->
-  <section id="updates">
+  <section id="updates" class="collapsible-section">
     <div class="section-container">
-      <div class="animate-on-scroll" style="text-align:center; margin-bottom:48px;">
+      <div class="animate-on-scroll collapsible-header" style="text-align:center; margin-bottom:0;" onclick="this.parentElement.parentElement.classList.toggle('expanded')">
         <span class="section-label">Latest Updates</span>
         <h2 class="section-title">최근 핵심 업데이트</h2>
+        <span class="collapsible-arrow">▼</span>
       </div>
+      <div class="collapsible-body" style="padding-top:48px;">
       <div class="updates-timeline animate-on-scroll">
         <!-- 2026.06 -->
         <div class="timeline-month-group">
@@ -755,6 +776,7 @@
           </div>
         </div>
       </div>
+      </div>
     </div>
   </section>
 
@@ -891,6 +913,107 @@
 
     initStepperObserver('search');
     initStepperObserver('aio');
+
+    // ===== Mobile Menu Toggle =====
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileOverlay = document.getElementById('mobileMenuOverlay');
+    const mobileBackdrop = document.getElementById('mobileMenuBackdrop');
+
+    function openMobileMenu() {
+      mobileOverlay.classList.add('open');
+      mobileBackdrop.classList.add('open');
+      menuToggle.classList.add('active');
+      menuToggle.setAttribute('aria-expanded', 'true');
+      menuToggle.setAttribute('aria-label', '메뉴 닫기');
+      document.body.classList.add('no-scroll');
+    }
+    function closeMobileMenu() {
+      mobileOverlay.classList.remove('open');
+      mobileBackdrop.classList.remove('open');
+      menuToggle.classList.remove('active');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.setAttribute('aria-label', '메뉴 열기');
+      document.body.classList.remove('no-scroll');
+    }
+    menuToggle.addEventListener('click', () => {
+      mobileOverlay.classList.contains('open') ? closeMobileMenu() : openMobileMenu();
+    });
+    mobileBackdrop.addEventListener('click', closeMobileMenu);
+
+    // ===== Interactive Chat Demo =====
+    const chatResponses = [
+      {
+        question: '🎤 Vibe CMS의 주요 기능이 뭐야?',
+        answer: 'Vibe CMS의 핵심 기능은 <strong>AI 지능형 검색(RAG)</strong>, <strong>AIO 자동 가공</strong>, <strong>4개 국어 원클릭 번역</strong>, <strong>멀티사이트 관리</strong> 등입니다. 글을 작성하면 AI가 자동으로 최적화하여 ChatGPT·Gemini의 공식 답변 출처로 인용됩니다.',
+        source: '🔗 출처: jksoft.io — Vibe CMS 주요 기능'
+      },
+      {
+        question: '⚡ AI 검색은 어떻게 작동해?',
+        answer: '사이트의 모든 게시물을 <strong>벡터(Vector)</strong>로 변환하여 데이터베이스에 저장합니다. 방문자가 자연어로 질문하면, <strong>pgvector</strong>가 밀리초 단위로 유사 게시물을 찾고, <strong>Gemini AI</strong>가 RAG 기반 정확한 답변과 출처를 실시간 생성합니다.',
+        source: '🔗 출처: jksoft.io — AI Intelligent Search'
+      },
+      {
+        question: '📞 도입 문의 방법은?',
+        answer: '이메일 또는 전화로 편하게 연락 주세요!<br><strong>📧 jksoft.jeong@gmail.com</strong><br><strong>📞 010-2998-0603</strong><br>20년+ 엔터프라이즈 경험을 바탕으로 최적의 솔루션을 제안합니다.',
+        source: ''
+      }
+    ];
+
+    let chatBusy = false;
+
+    function simulateChat(index) {
+      if (chatBusy) return;
+      chatBusy = true;
+
+      // Pause search stepper timer during demo
+      if (steppers.search.timer) {
+        clearTimeout(steppers.search.timer);
+        steppers.search.timer = null;
+      }
+
+      const chatBody = document.getElementById('chatBody');
+      const chips = document.querySelectorAll('.quick-chip');
+      const response = chatResponses[index];
+
+      // Disable all chips
+      chips.forEach(c => c.disabled = true);
+
+      // Show user question
+      const userBubble = document.createElement('div');
+      userBubble.className = 'chat-bubble user';
+      userBubble.textContent = response.question;
+      chatBody.appendChild(userBubble);
+      chatBody.scrollTop = chatBody.scrollHeight;
+
+      // Show typing indicator
+      const typingEl = document.createElement('div');
+      typingEl.className = 'chat-typing';
+      typingEl.innerHTML = '<span></span><span></span><span></span>';
+      chatBody.appendChild(typingEl);
+      chatBody.scrollTop = chatBody.scrollHeight;
+
+      // Show bot response after delay
+      setTimeout(() => {
+        typingEl.remove();
+        const botBubble = document.createElement('div');
+        botBubble.className = 'chat-bubble bot';
+        botBubble.innerHTML = response.answer;
+        if (response.source) {
+          botBubble.innerHTML += '<span class="chat-source">' + response.source + '</span>';
+        }
+        chatBody.appendChild(botBubble);
+        chatBody.scrollTop = chatBody.scrollHeight;
+
+        chatBusy = false;
+        chips.forEach(c => c.disabled = false);
+
+        // Resume search stepper after 10s
+        steppers.search.timer = setTimeout(() => {
+          const nextIdx = (steppers.search.current + 1) % document.querySelectorAll('#searchStepperList .stepper-item').length;
+          setStep('search', nextIdx);
+        }, 10000);
+      }, 1500);
+    }
   </script>
 
 </body>

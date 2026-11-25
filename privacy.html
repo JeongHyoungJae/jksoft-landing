@@ -18,10 +18,12 @@
   <link rel="alternate" hreflang="ko" href="https://www.jksoft.io/privacy.html" />
   <link rel="alternate" hreflang="ja" href="https://www.jksoft.io/ja/privacy.html" />
   <link rel="alternate" hreflang="x-default" href="https://www.jksoft.io/privacy.html" />
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=1.0.2">
+  <link rel="stylesheet" href="assets/css/style.css?v=3.1.0">
   <style>
     .legal-content-box h2 {
       font-size: 20px;
@@ -71,9 +73,10 @@
       border: 1px solid var(--border-glass);
     }
     .legal-content-box th {
-      background: rgba(255, 255, 255, 0.05);
-      color: var(--text-primary);
+      background: var(--emerald-50);
+      color: var(--emerald-900);
       font-weight: 600;
+      border-bottom: 2px solid var(--emerald-300);
     }
     .legal-content-box td {
       color: var(--text-secondary);
@@ -84,17 +87,14 @@
 
   <!-- Navigation -->
   <nav id="navbar">
-    <a href="index.html" class="nav-logo" aria-label="JkSoft 메인 화면으로 이동">
-      <div class="logo-icon"><img src="assets/images/logo.png" alt="JkSoft"></div>
-      <span>JkSoft</span>
+    <a href="index.html" class="nav-logo" aria-label="JKSoft 메인 화면으로 이동">
+      <div class="logo-icon"><img src="assets/images/logo.png" alt="JKSoft"></div>
+      <span class="brand-wordmark"><strong>JK</strong>Soft</span>
     </a>
     <ul class="nav-links">
-      <li><a href="index.html#about">About</a></li>
       <li><a href="index.html#vibe">Vibe CMS</a></li>
       <li><a href="index.html#search">AI Search</a></li>
-      <li><a href="index.html#updates">Updates</a></li>
-      <li><a href="index.html#tech">Tech Stack</a></li>
-      <li><a href="index.html#aio">AI Optimization</a></li>
+      <li><a href="index.html#about">About</a></li>
       <li><a href="profile.html">Profile</a></li>
     </ul>
     <div style="display: flex; gap: 20px; align-items: center;">
@@ -108,7 +108,7 @@
   </nav>
 
   <!-- Title Section -->
-  <section class="legal-section" style="padding-top: 160px; padding-bottom: 80px; background: linear-gradient(180deg, var(--bg-dark) 0%, rgba(99,102,241,0.02) 100%);">
+  <section class="legal-section" style="padding-top: 160px; padding-bottom: 80px;">
     <div class="section-container" style="max-width: 850px; margin: 0 auto; padding: 0 24px;">
       <div class="animate-on-scroll visible" style="margin-bottom: 40px;">
         <span class="section-label">Legal Policy</span>
@@ -230,19 +230,18 @@
   <footer>
     <div class="footer-content">
       <div class="footer-brand">
-        <a href="index.html" class="nav-logo" aria-label="JkSoft Home">
-          <div class="logo-icon"><img src="assets/images/logo.png" alt="JkSoft"></div>
-          <span>JkSoft</span>
+        <a href="index.html" class="footer-logo-link" aria-label="JKSoft Home">
+          <img src="assets/images/logo-full.png" alt="JKSoft — IT CONSULTING & ARCHITECTURE / Powered by VIBE CMS" class="footer-logo-full">
         </a>
         <p>기술로 연결하고, 플랫폼으로 성장합니다. 멀티테넌트 기반의 차세대 AI-Ready 웹 CMS 솔루션.</p>
       </div>
       <div class="footer-links">
         <h4>서비스</h4>
         <ul>
-          <li><a href="index.html#vibe">Vibe CMS</a></li>
-          <li><a href="index.html#updates">Latest Updates</a></li>
-          <li><a href="index.html#aio">AI Optimization</a></li>
-          <li><a href="index.html#tech">Tech Stack</a></li>
+          <li><a href="https://vibe.jksoft.io/" target="_blank" rel="noopener noreferrer">Vibe CMS ↗</a></li>
+          <li><a href="index.html#vibe">AI Optimization</a></li>
+          <li><a href="index.html#search">AI Search</a></li>
+          <li><a href="index.html#about">About</a></li>
         </ul>
       </div>
       <div class="footer-links">

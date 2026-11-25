@@ -21,10 +21,12 @@
   <link rel="alternate" hreflang="ko" href="https://www.jksoft.io/profile.html" />
   <link rel="alternate" hreflang="ja" href="https://www.jksoft.io/ja/profile.html" />
   <link rel="alternate" hreflang="x-default" href="https://www.jksoft.io/profile.html" />
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=1.0.1">
+  <link rel="stylesheet" href="assets/css/style.css?v=3.1.0">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -44,17 +46,14 @@
 
   <!-- Navigation -->
   <nav id="navbar">
-    <a href="index.html" class="nav-logo" aria-label="JkSoft Home">
-      <div class="logo-icon"><img src="assets/images/logo.png" alt="JkSoft"></div>
-      <span>JkSoft</span>
+    <a href="index.html" class="nav-logo" aria-label="JKSoft Home">
+      <div class="logo-icon"><img src="assets/images/logo.png" alt="JKSoft"></div>
+      <span class="brand-wordmark"><strong>JK</strong>Soft</span>
     </a>
     <ul class="nav-links">
-      <li><a href="index.html#about">About</a></li>
       <li><a href="index.html#vibe">Vibe CMS</a></li>
       <li><a href="index.html#search">AI Search</a></li>
-      <li><a href="index.html#updates">Updates</a></li>
-      <li><a href="index.html#tech">Tech Stack</a></li>
-      <li><a href="index.html#aio">AI Optimization</a></li>
+      <li><a href="index.html#about">About</a></li>
       <li><a href="profile.html" style="color: var(--text-primary);">Profile</a></li>
     </ul>
     <div style="display: flex; gap: 20px; align-items: center;">
@@ -86,9 +85,10 @@
         복잡한 비즈니스 요구를 기술로 실현하는 소프트웨어 엔지니어
       </p>
       <div class="hero-contact-buttons" style="animation: fadeInUp 0.8s ease-out 0.4s both;">
+        <a href="https://vibe.jksoft.io/" target="_blank" rel="noopener noreferrer" class="contact-btn" style="border-color: var(--border-emerald); background: var(--emerald-50); color: var(--emerald-900);">🚀 Vibe CMS ↗</a>
         <a href="mailto:jksoft.jeong@gmail.com" class="contact-btn">📧 jksoft.jeong@gmail.com</a>
         <a href="tel:010-2998-0603" class="contact-btn">📞 010-2998-0603</a>
-        <a href="https://github.com/JeongHyoungJae" target="_blank" class="contact-btn">🔗 GitHub</a>
+        <a href="https://github.com/JeongHyoungJae" target="_blank" rel="noopener noreferrer" class="contact-btn">🔗 GitHub</a>
       </div>
     </div>
   </section>
@@ -206,8 +206,8 @@
           <div class="timeline-period">2022 — 현재</div>
           <div class="timeline-role">SaaS + AI</div>
           <div class="timeline-desc">
-            헬스케어 AR/VR 플랫폼, 자동차 출입통제 SaaS, Vibe 멀티테넌트 플랫폼 개발.
-            AI 최적화(AIO) 기술 적용.
+            헬스케어 AR/VR 플랫폼, 한화비전 출입통제·키퍼(Keeper) 플랫폼, Vibe 멀티테넌트 SaaS 개발.
+            AI 최적화(AIO) 및 모의해킹 대응 등 엔터프라이즈 보안 체계 적용.
           </div>
         </div>
         <div class="timeline-item animate-on-scroll">
@@ -224,8 +224,8 @@
           <div class="timeline-period">2015 — 2018</div>
           <div class="timeline-role">설계 + 글로벌</div>
           <div class="timeline-desc">
-            대한항공 2년 8개월 대형 프로젝트. 글로벌 결제 시스템(유니온페이, 알리페이, 카카오페이 등),
-            다국어 대응, 한국/미국 접근성(Accessibility) 설계.
+            대한항공 글로벌 사이트 개편 대형 프로젝트. 글로벌 결제 시스템(유니온페이, 알리페이, 카카오페이 등),
+            다국어 대응, 한국/미국 접근성(Accessibility) 설계 및 정기 모의해킹 대응.
           </div>
         </div>
         <div class="timeline-item animate-on-scroll">
@@ -265,15 +265,15 @@
         <!-- Project 1: Vibe -->
         <div class="project-card featured animate-on-scroll">
           <div>
-            <div class="project-year">현재 진행 중</div>
-            <h3>Vibe CMS</h3>
+            <div class="project-year">2024 ~ 현재 진행 중</div>
+            <h3><a href="https://vibe.jksoft.io/" target="_blank" rel="noopener noreferrer" style="color: inherit;">Vibe CMS <span style="font-size: 13px; color: var(--emerald-active); font-weight: 600; margin-left: 6px; text-decoration: underline;">vibe.jksoft.io ↗</span></a></h3>
             <div class="project-role">대표 / 기획 / 풀스택 개발</div>
             <div class="project-desc">
               <ul>
                 <li>멀티테넌트 SaaS 기반 웹 CMS 플랫폼 (PWA)</li>
-                <li>AI 콘텐츠 자동 최적화 (AIO)</li>
-                <li>4개 국어 지원 (한/영/중/일)</li>
+                <li>AI 콘텐츠 자동 최적화 (AIO) 및 4개 국어(한/영/중/일) 지원</li>
                 <li>화이트라벨링 및 테넌트별 브랜드 개인화</li>
+                <li><strong>보안</strong>: 멀티테넌트 데이터 격리, OAuth2 계정 보안·비정상 접근 모니터링, 자체 모의해킹 및 OWASP 취약점 대응</li>
               </ul>
             </div>
           </div>
@@ -283,6 +283,7 @@
               <span>NestJS</span>
               <span>TypeScript</span>
               <span>Prisma</span>
+              <span>PostgreSQL</span>
               <span>Gemini AI</span>
               <span>NHN Cloud</span>
             </div>
@@ -290,50 +291,40 @@
         </div>
 
         <!-- Project 2: Hanwha Vision -->
-        <div class="project-card animate-on-scroll">
-          <div class="project-year">2024</div>
-          <h3>한화비전: 자동차 출입통제 / 아파트 커뮤니티</h3>
-          <div class="project-role">분석 / 설계 / 개발</div>
-          <div class="project-desc">
-            <ul>
-              <li>자동차 출입통제 시스템 개발</li>
-              <li>아파트 커뮤니티 플랫폼</li>
-            </ul>
+        <div class="project-card featured animate-on-scroll">
+          <div>
+            <div class="project-year">2024 ~ 현재 진행 중</div>
+            <h3>한화비전: 자동차 출입통제 / 아파트 커뮤니티 / 키퍼(Keeper)</h3>
+            <div class="project-role">분석 / 설계 / 풀스택·BE 개발</div>
+            <div class="project-desc">
+              <ul>
+                <li>자동차 출입통제 시스템 및 아파트 커뮤니티 플랫폼 개발·운영</li>
+                <li>소상공인 매장 관리 올인원 솔루션 <a href="https://keeper.ceo/" target="_blank" rel="noopener noreferrer" style="color: var(--indigo-light); text-decoration: underline;">키퍼(Keeper, keeper.ceo)</a> 백엔드(BE) API 설계 및 개발</li>
+                <li><strong>보안</strong>: 웹/API 모의해킹 및 취약점 진단 대응, 개인정보·인증 구간 암호화(SSL/TLS·DB) 및 RBAC 접근통제</li>
+              </ul>
+            </div>
           </div>
-          <div class="project-tech">
-            <span>Next.js</span>
-            <span>PostgreSQL</span>
-            <span>SMS</span>
-          </div>
-        </div>
-
-        <!-- Project 3: MindAI / FNI -->
-        <div class="project-card animate-on-scroll">
-          <div class="project-year">2022</div>
-          <h3>마인드AI / FNI: 헬스케어 AR·VR 플랫폼</h3>
-          <div class="project-role">분석 / 개발</div>
-          <div class="project-desc">
-            <ul>
-              <li><strong>바라봄</strong> — VR 인지장애 평가, 인지재활, 정서치료</li>
-              <li>근골격계 질환 AR 운동치료 프로그램</li>
-              <li><strong>Consurt</strong> — 정신건강 분석 프로젝트</li>
-            </ul>
-          </div>
-          <div class="project-tech">
-            <span>AR</span>
-            <span>VR</span>
+          <div>
+            <div class="project-tech">
+              <span>Next.js</span>
+              <span>NestJS</span>
+              <span>TypeScript</span>
+              <span>Prisma</span>
+              <span>PostgreSQL</span>
+              <span>SMS</span>
+            </div>
           </div>
         </div>
 
-        <!-- Project 4: Samsung SDS Catalog -->
+        <!-- Project 3: Samsung SDS Catalog -->
         <div class="project-card animate-on-scroll">
           <div class="project-year">2023</div>
           <h3>Samsung SDS: Development Platform Catalog</h3>
           <div class="project-role">개발</div>
           <div class="project-desc">
             <ul>
-              <li>Samsung SDS Fabrix 백엔드 개발</li>
-              <li>테넌트별 Catalog 생성 및 관리</li>
+              <li>Samsung SDS Fabrix 백엔드 개발 및 테넌트별 Catalog 생성·관리</li>
+              <li><strong>보안</strong>: 사내 보안 표준 준수, 모의해킹·정적/동적 취약점 점검 대응 및 멀티테넌트 격리</li>
             </ul>
           </div>
           <div class="project-tech">
@@ -348,34 +339,33 @@
           </div>
         </div>
 
-        <!-- Project 5: Samsung SDS IDE -->
+        <!-- Project 4: MindAI / FNI -->
         <div class="project-card animate-on-scroll">
-          <div class="project-year">2021</div>
-          <h3>Samsung SDS: IDE Development</h3>
-          <div class="project-role">개발</div>
+          <div class="project-year">2022</div>
+          <h3>마인드AI / FNI: 헬스케어 AR·VR 플랫폼</h3>
+          <div class="project-role">분석 / 개발</div>
           <div class="project-desc">
             <ul>
-              <li>IDE Plugin 개발 (Eclipse, IntelliJ 대응)</li>
-              <li>프로젝트 산출물 자동 생성 및 관리</li>
-              <li>Diagram, DAO/VO/SQL 자동 생성</li>
+              <li><strong>바라봄</strong> — VR 인지장애 평가, 인지재활, 정서치료</li>
+              <li>근골격계 질환 AR 운동치료 및 <strong>Consurt</strong> 정신건강 분석 프로젝트</li>
+              <li><strong>보안</strong>: 헬스케어 민감정보 암호화·접근통제 및 모의해킹 취약점 점검 대응</li>
             </ul>
           </div>
           <div class="project-tech">
-            <span>Java</span>
-            <span>Swing</span>
-            <span>Git</span>
+            <span>AR</span>
+            <span>VR</span>
           </div>
         </div>
 
-        <!-- Project 6: 경희의료원 -->
+        <!-- Project 5: 경희의료원 -->
         <div class="project-card animate-on-scroll">
           <div class="project-year">2021</div>
           <h3>경희의료원 사이트 개편</h3>
           <div class="project-role">개발</div>
           <div class="project-desc">
             <ul>
-              <li>사이트 전면 개편 및 온라인 진료예약 기능 추가</li>
-              <li>평화이즈 nU 연동</li>
+              <li>사이트 전면 개편, 온라인 진료예약 구축 및 평화이즈 nU 연동</li>
+              <li><strong>보안</strong>: 의료기관 개인정보보호·ISMS 기준 적용 및 외부 모의해킹·웹 취약점 전 항목 조치</li>
             </ul>
           </div>
           <div class="project-tech">
@@ -386,6 +376,24 @@
           </div>
         </div>
 
+        <!-- Project 6: Samsung SDS IDE -->
+        <div class="project-card animate-on-scroll">
+          <div class="project-year">2021</div>
+          <h3>Samsung SDS: IDE Development</h3>
+          <div class="project-role">개발</div>
+          <div class="project-desc">
+            <ul>
+              <li>IDE Plugin 개발 (Eclipse, IntelliJ 대응) 및 산출물·Diagram·DAO/VO/SQL 자동 생성</li>
+              <li><strong>보안</strong>: 시큐어 코딩 템플릿 적용(SQL Injection 차단) 및 정적 보안 취약점(SAST) 점검 대응</li>
+            </ul>
+          </div>
+          <div class="project-tech">
+            <span>Java</span>
+            <span>Swing</span>
+            <span>Git</span>
+          </div>
+        </div>
+
         <!-- Project 7: Splunk/Elastic -->
         <div class="project-card animate-on-scroll">
           <div class="project-year">2019</div>
@@ -393,8 +401,8 @@
           <div class="project-role">분석 / 개발</div>
           <div class="project-desc">
             <ul>
-              <li>Splunk와 Elastic 플러그인 App 고도화</li>
-              <li>데이터 분석 플랫폼 확장</li>
+              <li>Splunk와 Elastic 플러그인 App 고도화 및 데이터 분석 플랫폼 확장</li>
+              <li><strong>보안</strong>: 보안 로그 분석 환경 API 취약점 점검·모의해킹 대응 및 데이터 조회 권한 분리</li>
             </ul>
           </div>
           <div class="project-tech">
@@ -413,6 +421,7 @@
           <div class="project-desc">
             <ul>
               <li>환자/처방/수술 정보를 의사 연구개발 자료로 제공하는 데이터 웨어하우스 시스템</li>
+              <li><strong>보안</strong>: 의료데이터 비식별화·권한별 접근통제 및 병원 내부 보안 심사·모의해킹 대응</li>
             </ul>
           </div>
           <div class="project-tech">
@@ -428,7 +437,7 @@
         <!-- Project 9: 대한항공 -->
         <div class="project-card featured animate-on-scroll">
           <div>
-            <div class="project-year">2015 (2년 8개월)</div>
+            <div class="project-year">2015 ~ 2018</div>
             <h3>대한항공 사이트 개편</h3>
             <div class="project-role">설계 / 개발</div>
             <div class="project-desc">
@@ -436,6 +445,7 @@
                 <li>서비스 개발: 사전입국심사, 초과수하물, SNS 공유</li>
                 <li><strong>글로벌 결제</strong>: KICC, 유니온페이, 알리페이, 카카오페이, Yahoo Wallet, 일본 편의점</li>
                 <li>한국/미국 접근성(Accessibility) 대응</li>
+                <li><strong>보안</strong>: 글로벌 결제·사전입국심사 민감정보 암호화 및 대기업 정기 모의해킹·웹 취약점 대응</li>
               </ul>
             </div>
           </div>
@@ -483,7 +493,7 @@
         <!-- Project 11: MBC/KBS -->
         <div class="project-card featured animate-on-scroll">
           <div>
-            <div class="project-year">2009 (3년 5개월)</div>
+            <div class="project-year">2009 ~ 2015</div>
             <h3>한국 방송사 컨텐츠 판매 (MBC / KBS)</h3>
             <div class="project-role">공통 / 분석 / 설계 / 개발</div>
             <div class="project-desc">
@@ -491,7 +501,7 @@
                 <li>일본 시장 퍼블리싱: Yahoo Japan (OAuth 1.0), Rakuten (OpenID)</li>
                 <li>다수 PG 연동: SPS, Digital Check, Yahoo Wallet, Rakuten</li>
                 <li>Groupon Japan, Edy 쿠폰 시스템</li>
-                <li>통계 시스템, SNS 연동 소셜댓글</li>
+                <li>통계 시스템, SNS 연동 소셜댓글 및 OAuth/PG 결제 구간 보안</li>
               </ul>
             </div>
           </div>
@@ -526,17 +536,17 @@
         <div class="other-projects-list" id="otherList">
           <div class="other-project-row">
             <span class="other-project-year">2021</span>
-            <span class="other-project-name">해양수산부 기술거래소 개편</span>
+            <span class="other-project-name">해양수산부 기술거래소 개편 (공공 보안성 검토·모의해킹 대응)</span>
             <span class="other-project-role">분석 / 설계 / 개발</span>
           </div>
           <div class="other-project-row">
             <span class="other-project-year">2020</span>
-            <span class="other-project-name">오토앤 쇼핑몰 고도화 (현대/기아 멤버스)</span>
+            <span class="other-project-name">오토앤 쇼핑몰 고도화 (현대/기아 멤버스 · 모의해킹 대응)</span>
             <span class="other-project-role">개발</span>
           </div>
           <div class="other-project-row">
             <span class="other-project-year">2020</span>
-            <span class="other-project-name">CMS 서비스 고도화 (클라우드 솔루션)</span>
+            <span class="other-project-name">CMS 서비스 고도화 (클라우드 솔루션 · 웹 취약점 대응)</span>
             <span class="other-project-role">분석 / 개발</span>
           </div>
           <div class="other-project-row">
@@ -596,18 +606,18 @@
   <footer>
     <div class="footer-content">
       <div class="footer-brand">
-        <a href="index.html" class="nav-logo" aria-label="JkSoft Home">
-          <div class="logo-icon"><img src="assets/images/logo.png" alt="JkSoft"></div>
-          <span>JkSoft</span>
+        <a href="index.html" class="footer-logo-link" aria-label="JKSoft Home">
+          <img src="assets/images/logo-full.png" alt="JKSoft — IT CONSULTING & ARCHITECTURE / Powered by VIBE CMS" class="footer-logo-full">
         </a>
         <p>기술로 연결하고, 플랫폼으로 성장합니다. 멀티테넌트 기반의 차세대 AI-Ready Web CMS 솔루션.</p>
       </div>
       <div class="footer-links">
         <h4>서비스</h4>
         <ul>
-          <li><a href="index.html#vibe">Vibe CMS</a></li>
-          <li><a href="index.html#aio">AI Optimization</a></li>
-          <li><a href="index.html#tech">Tech Stack</a></li>
+          <li><a href="https://vibe.jksoft.io/" target="_blank" rel="noopener noreferrer">Vibe CMS ↗</a></li>
+          <li><a href="index.html#vibe">AI Optimization</a></li>
+          <li><a href="index.html#search">AI Search</a></li>
+          <li><a href="index.html#about">About</a></li>
         </ul>
       </div>
       <div class="footer-links">

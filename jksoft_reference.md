@@ -1,8 +1,8 @@
-# JkSoft 회사 소개 및 프로젝트 수행 레퍼런스
+# JKSoft 회사 소개 및 프로젝트 수행 레퍼런스
 
 ## 1. 회사 및 대표자 개요
 
-- **회사명**: JkSoft (https://www.jksoft.io)
+- **회사명**: JKSoft (https://www.jksoft.io)
 - **대표자**: 정형재 (대표 / Software Architect / Full-Stack Engineer)
 - **연락처**: 010-2998-0603 / jksoft.jeong@gmail.com
 - **GitHub**: https://github.com/JeongHyoungJae
@@ -13,7 +13,7 @@
 - **수행 역할**: AA(Application Architect), PL(Project Leader), 분석·설계·풀스택 개발, 보안 아키텍처 수립
 
 ### 회사 소개
-JkSoft는 20년 이상의 엔터프라이즈 시스템 아키텍처 경험과 풀스택 기술력을 바탕으로, 안정적이고 보안성이 검증된 멀티테넌트 SaaS 플랫폼 및 기업용 웹 시스템을 설계·구축하는 소프트웨어 엔지니어링 전문 기업입니다.  
+JKSoft는 20년 이상의 엔터프라이즈 시스템 아키텍처 경험과 풀스택 기술력을 바탕으로, 안정적이고 보안성이 검증된 멀티테넌트 SaaS 플랫폼 및 기업용 웹 시스템을 설계·구축하는 소프트웨어 엔지니어링 전문 기업입니다.  
 대기업·공공기관·의료기관의 엄격한 보안 기준(모의해킹 대응, 취약점 진단 조치, 개인정보보호, 시큐어 코딩)을 충족해 온 실전 경험을 보유하고 있습니다.
 
 ---
@@ -37,9 +37,9 @@ JkSoft는 20년 이상의 엔터프라이즈 시스템 아키텍처 경험과 �
 
 ## 3. 주요 프로젝트 수행 레퍼런스 (최근순 / 보안 작업 포함)
 
-### [1] Vibe CMS — 멀티테넌트 AI-Ready 웹 CMS 플랫폼 (SaaS / PWA)
+### [1] VIBE CMS — 멀티테넌트 AI-Ready 웹 CMS 플랫폼 (SaaS / PWA)
 - **수행기간**: 2024 ~ 현재 진행 중
-- **발주/운영**: JkSoft 자체 솔루션
+- **발주/운영**: JKSoft 자체 솔루션
 - **수행역할**: 대표 / 기획 / 아키텍처 설계 / 풀스택 개발
 - **기술스택**: Next.js, NestJS, TypeScript, Prisma, PostgreSQL(pgvector), Gemini AI, NHN Cloud
 - **주요내용**:

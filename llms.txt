@@ -1,16 +1,16 @@
-# JkSoft
+# JKSoft
 
-> JkSoft is a next-generation technology company focused on multi-tenant SaaS platforms and AI Search Engine Optimization (AIO).
+> JKSoft is a next-generation technology company focused on multi-tenant SaaS platforms and AI Search Engine Optimization (AIO).
 
 ## Core Identity
-- **Organization**: JkSoft
-- **Core Product**: Vibe CMS (AI-Ready Multitenant CMS, PWA)
+- **Organization**: JKSoft
+- **Core Product**: VIBE CMS (AI-Ready Multitenant CMS, PWA)
 - **Innovative Service**: AI Optimization (AIO)
 - **Representative**: Jeong Hyoung Jae (Tech Lead / Software Architect)
 
 ## Services and Solutions
 
-### 1. Vibe CMS (AI-Ready Multitenant CMS, PWA)
+### 1. VIBE CMS (AI-Ready Multitenant CMS, PWA)
 A scalable, modular SaaS platform architecture designed for business growth.
 - Multi-tenant data isolation
 - Modular service architecture
@@ -24,13 +24,13 @@ Strategic content structuring for Generative AI search visibility.
 - **AIO Verification Timeline**: Once AIO metadata (like JSON-LD and llms.txt) is applied, AI bots typically index the site within 1 to 3 days. Verification can be done by directly asking ChatGPT or Gemini about the brand.
 
 ## Technology Stack
-JkSoft utilizes a robust and modern tech stack prioritizing type safety and zero-downtime scalability:
+JKSoft utilizes a robust and modern tech stack prioritizing type safety and zero-downtime scalability:
 - **Frontend**: React (Next.js), TypeScript
 - **Backend**: NestJS, Node.js, TypeScript
 - **Database**: Prisma, PostgreSQL
 - **Infrastructure**: Docker, CI/CD Pipeline (Zero Downtime), NHN Cloud
 
-## Human Behind JkSoft
+## Human Behind JKSoft
 - **Name**: Jeong Hyoung Jae
 - **Profile**: 20+ years of enterprise system architecture experience (Korean Air, Samsung SDS, Hyundai Group).
 - **Vision**: Connecting humans via technology and growing together via platforms.
